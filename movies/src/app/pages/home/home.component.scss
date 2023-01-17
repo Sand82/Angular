@@ -1,0 +1,26 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 35rem;
+  position: relative;
+
+  .slide {
+    position: relative;
+    display: flex;
+
+    &-bg {
+      position: relative;
+
+      &-image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-pane {
+      position: absolute;
+    }
+  }
+}
