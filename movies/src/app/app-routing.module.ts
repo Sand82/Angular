@@ -11,16 +11,20 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: "genres",
-    component: GenreComponent,
+    path: "movies",
+    component: MoviesComponent,
   },
   {
-    path: "movies",
+    path: "movies/genres/:genreId",
     component: MoviesComponent,
   },
   {
     path: "movie/:id",
     component: MovieComponent,
+  },
+  {
+    path: "genres",
+    component: GenreComponent,
   },
   {
     path: "**",
