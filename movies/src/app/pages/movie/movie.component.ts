@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { IMAGES_SIZES } from "../../constants/images-sizes";
 import { MoviesService } from "../../service/movies.service";
@@ -8,18 +8,20 @@ import {
   MovieImages,
   MovieCredits,
 } from "../../models/movie";
+import { first } from "rxjs";
 
 @Component({
   selector: "app-movie",
   templateUrl: "./movie.component.html",
   styleUrls: ["./movie.component.scss"],
 })
-export class MovieComponent implements OnInit {
+export class MovieComponent implements OnInit, OnDestroy {
   movie: Movie | null = null;
   movieVideos: MovieVideo[] = [];
   imagesSizes = IMAGES_SIZES;
   movieImages: MovieImages | null = null;
   movieCredits: MovieCredits | null = null;
+  moviesSimilar: Movie[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -27,12 +29,17 @@ export class MovieComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(({ id }) => {
+    this.route.params.pipe(first()).subscribe(({ id }) => {
       this.getCurrMovie(id);
       this.getCurrMovieVideos(id);
       this.getCurrMovieImages(id);
       this.getCurrMovieCredits(id);
+      this.getCurrMovieSimilar(id);
     });
+  }
+
+  ngOnDestroy(): void {
+    console.log("Component destroyed");
   }
 
   getCurrMovie(id: string) {
@@ -56,6 +63,12 @@ export class MovieComponent implements OnInit {
   getCurrMovieCredits(id: string) {
     this.moviesService.getMovieCreditss(id).subscribe((movieCreditsData) => {
       this.movieCredits = movieCreditsData;
+    });
+  }
+
+  getCurrMovieSimilar(id: string) {
+    this.moviesService.getSimilarMovies(id).subscribe((moviesSimilarData) => {
+      this.moviesSimilar = moviesSimilarData;
     });
   }
 }

@@ -7,6 +7,7 @@ import {
   MovieImages,
   MovieCredits,
 } from "../models/movie";
+import { GenresDto } from "../models/genre";
 import { switchMap } from "rxjs/operators";
 import { of } from "rxjs";
 
@@ -79,5 +80,27 @@ export class MoviesService {
     return this.http.get<MovieCredits>(
       `${this.baseUrl}/movie/${id}/credits?api_key=${this.apyKey}`
     );
+  }
+
+  getSimilarMovies(id: string) {
+    return this.http
+      .get<MovieDto>(
+        `${this.baseUrl}/movie/${id}/similar?api_key=${this.apyKey}`
+      )
+      .pipe(
+        switchMap((res) => {
+          return of(res.results);
+        })
+      );
+  }
+
+  getMoviesGenres() {
+    return this.http
+      .get<GenresDto>(`${this.baseUrl}/genre/movie/list?api_key=${this.apyKey}`)
+      .pipe(
+        switchMap((res) => {
+          return of(res.genres);
+        })
+      );
   }
 }
