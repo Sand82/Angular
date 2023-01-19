@@ -18,7 +18,8 @@ import { TabViewModule } from "primeng/tabview";
 import { VideoEmbedComponent } from "./components/video-embed/video-embed.component";
 import { ImageModule } from "primeng/image";
 import { CarouselModule } from "primeng/carousel";
-import { GenreComponent } from './pages/genre/genre.component';
+import { GenreComponent } from "./pages/genre/genre.component";
+import { InputTextModule } from "primeng/inputtext";
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { GenreComponent } from './pages/genre/genre.component';
     TabViewModule,
     ImageModule,
     CarouselModule,
+    InputTextModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
