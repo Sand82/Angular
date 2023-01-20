@@ -20,8 +20,9 @@ import { ImageModule } from "primeng/image";
 import { CarouselModule } from "primeng/carousel";
 import { GenreComponent } from "./pages/genre/genre.component";
 import { InputTextModule } from "primeng/inputtext";
-import { TvshowsComponent } from './pages/tvshows/tvshows.component';
-import { TvshowItemComponent } from './components/tvshow-item/tvshow-item.component';
+import { TvshowsComponent } from "./pages/tvshows/tvshows.component";
+import { TvshowItemComponent } from "./components/tvshow-item/tvshow-item.component";
+import { TvshowDetailsComponent } from "./pages/tvshow-details/tvshow-details.component";
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { TvshowItemComponent } from './components/tvshow-item/tvshow-item.compon
     GenreComponent,
     TvshowsComponent,
     TvshowItemComponent,
+    TvshowDetailsComponent,
   ],
   imports: [
     BrowserModule,

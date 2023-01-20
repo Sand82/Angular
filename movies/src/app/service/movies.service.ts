@@ -8,7 +8,7 @@ import {
   MovieCredits,
 } from "../models/movie";
 import { GenresDto } from "../models/genre";
-import { TvshowsDto } from "../models/tvshow";
+import { TvshowDetails, TvshowsDto } from "../models/tvshow";
 import { switchMap } from "rxjs/operators";
 import { of } from "rxjs";
 
@@ -119,5 +119,10 @@ export class MoviesService {
           return of(res.results);
         })
       );
+  }
+  getTvshow(id: string) {
+    return this.http.get<TvshowDetails>(
+      `${this.baseUrl}/tv/${id}?api_key=${this.apyKey}`
+    );
   }
 }
