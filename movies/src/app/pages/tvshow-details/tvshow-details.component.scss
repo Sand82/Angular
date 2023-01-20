@@ -1,0 +1,10 @@
+@import "../../../styles/colors";
+.tvshow-image {
+  width: 100%;
+  border: 1px solid white;
+  padding: 5px;
+  img {
+    object-fit: cover;
+    width: 100%;
+  }
+}

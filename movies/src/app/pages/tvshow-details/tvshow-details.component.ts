@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { first } from "rxjs";
 import { TvshowDetails } from "src/app/models/tvshow";
 import { MoviesService } from "../../service/movies.service";
+import { IMAGES_SIZES } from "../../constants/images-sizes";
 
 @Component({
   selector: "tvshow-details",
@@ -11,6 +12,7 @@ import { MoviesService } from "../../service/movies.service";
 })
 export class TvshowDetailsComponent implements OnInit, OnDestroy {
   tvshow: TvshowDetails | null = null;
+  imagesSizes = IMAGES_SIZES;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,7 +32,6 @@ export class TvshowDetailsComponent implements OnInit, OnDestroy {
   getCurrMovie(id: string) {
     this.moviesService.getTvshow(id).subscribe((tvshowData) => {
       this.tvshow = tvshowData;
-      console.log(tvshowData);
     });
   }
 }

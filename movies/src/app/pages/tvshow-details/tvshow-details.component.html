@@ -1,4 +1,19 @@
 <p>tvshow-details works!</p>
 <ng-container *ngIf="tvshow">
-  <pre>{{ tvshow.name }}</pre>
+  <div class="grid">
+    <div class="col-12 md:col-3 lg:col-3">
+      <div class="tvshow-image">
+        <p-image
+          [src]="imagesSizes.medium + tvshow.poster_path"
+          alt="Image"
+          width="100%"
+        >
+          <ng-template pTemplate="indicator"> Indicator Content </ng-template>
+        </p-image>
+      </div>
+    </div>
+    <div class="col-12 md:col-9 lg:col-9">
+      <div>Details</div>
+    </div>
+  </div>
 </ng-container>

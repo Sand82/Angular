@@ -23,6 +23,7 @@ import { InputTextModule } from "primeng/inputtext";
 import { TvshowsComponent } from "./pages/tvshows/tvshows.component";
 import { TvshowItemComponent } from "./components/tvshow-item/tvshow-item.component";
 import { TvshowDetailsComponent } from "./pages/tvshow-details/tvshow-details.component";
+import { GalleriaModule } from "primeng/galleria";
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { TvshowDetailsComponent } from "./pages/tvshow-details/tvshow-details.co
     ImageModule,
     CarouselModule,
     InputTextModule,
+    GalleriaModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
