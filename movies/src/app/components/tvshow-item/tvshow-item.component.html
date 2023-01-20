@@ -1,0 +1,13 @@
+<ng-container *ngIf="tvshowData">
+  <a class="tvshow-item">
+    <div class="tvshow-item-rating">
+      <i class="app-icon">star</i>
+      <span>{{ tvshowData.vote_average }}</span
+      >/10
+    </div>
+    <div class="tvshow-item-image">
+      <img [src]="imagesSizes.medium + tvshowData.poster_path" />
+    </div>
+    <div class="tvshow-item-name">{{ tvshowData.name }}</div>
+  </a>
+</ng-container>

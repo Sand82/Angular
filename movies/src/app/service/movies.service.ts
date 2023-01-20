@@ -8,6 +8,7 @@ import {
   MovieCredits,
 } from "../models/movie";
 import { GenresDto } from "../models/genre";
+import { TvshowsDto } from "../models/tvshow";
 import { switchMap } from "rxjs/operators";
 import { of } from "rxjs";
 
@@ -111,6 +112,16 @@ export class MoviesService {
       .get<MovieDto>(
         `${this.baseUrl}/discover/movie?with_genres=${genreId}&page=${pageNumber}&api_key=${this.apyKey}`
       )
+      .pipe(
+        switchMap((res) => {
+          return of(res.results);
+        })
+      );
+  }
+
+  getTvshows(type: string = "popular", count: number = 12) {
+    return this.http
+      .get<TvshowsDto>(`${this.baseUrl}/tv/${type}?api_key=${this.apyKey}`)
       .pipe(
         switchMap((res) => {
           return of(res.results);
