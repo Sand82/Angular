@@ -63,16 +63,6 @@ export class MoviesService {
       );
   }
 
-  geTvs(type: string = "latest", count: number = 12) {
-    return this.http
-      .get<MovieDto>(`${this.baseUrl}/tv/${type}?api_key=${this.apyKey}`) // TODO change MovieDto to TvDto
-      .pipe(
-        switchMap((res) => {
-          return of(res.results.slice(0, count));
-        })
-      );
-  }
-
   getMovieImages(id: string) {
     return this.http.get<MovieImages>(
       `${this.baseUrl}/movie/${id}/images?api_key=${this.apyKey}`
@@ -119,9 +109,11 @@ export class MoviesService {
       );
   }
 
-  getTvshows(type: string = "popular", count: number = 12) {
+  getTvshows(page: number, type: string = "popular", count: number = 12) {
     return this.http
-      .get<TvshowsDto>(`${this.baseUrl}/tv/${type}?api_key=${this.apyKey}`)
+      .get<TvshowsDto>(
+        `${this.baseUrl}/tv/${type}?page=${page}&api_key=${this.apyKey}`
+      )
       .pipe(
         switchMap((res) => {
           return of(res.results);

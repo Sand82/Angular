@@ -2,7 +2,7 @@
   <a class="tvshow-item">
     <div class="tvshow-item-rating">
       <i class="app-icon">star</i>
-      <span>{{ tvshowData.vote_average }}</span
+      <span>{{ tvshowData.vote_average | number : "1.1-1" }}</span
       >/10
     </div>
     <div class="tvshow-item-image">
