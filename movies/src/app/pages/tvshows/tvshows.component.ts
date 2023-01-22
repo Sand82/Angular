@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { MoviesService } from "../../service/movies.service";
+import { TvshowsService } from "../../service/tvshows.service";
 import { Tvshow } from "../../models/tvshow";
 
 @Component({
@@ -10,14 +10,14 @@ import { Tvshow } from "../../models/tvshow";
 export class TvshowsComponent implements OnInit {
   tvshows: Tvshow[] = [];
 
-  constructor(private moviesService: MoviesService) {}
+  constructor(private tvshowsService: TvshowsService) {}
 
   ngOnInit(): void {
     this.getCurrTvshows(1);
   }
 
   getCurrTvshows(page: number) {
-    this.moviesService.getTvshows(page).subscribe((tvshowData) => {
+    this.tvshowsService.getTvshows(page).subscribe((tvshowData) => {
       this.tvshows = tvshowData;
     });
   }

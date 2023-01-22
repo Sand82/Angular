@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { first } from "rxjs";
 import { TvshowDetails } from "src/app/models/tvshow";
-import { MoviesService } from "../../service/movies.service";
+import { TvshowsService } from "../../service/tvshows.service";
 import { IMAGES_SIZES } from "../../constants/images-sizes";
 
 @Component({
@@ -16,7 +16,7 @@ export class TvshowDetailsComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private moviesService: MoviesService
+    private tvshowsService: TvshowsService
   ) {}
 
   ngOnInit(): void {
@@ -30,7 +30,7 @@ export class TvshowDetailsComponent implements OnInit, OnDestroy {
   }
 
   getCurrMovie(id: string) {
-    this.moviesService.getTvshow(id).subscribe((tvshowData) => {
+    this.tvshowsService.getTvshow(id).subscribe((tvshowData) => {
       this.tvshow = tvshowData;
     });
   }

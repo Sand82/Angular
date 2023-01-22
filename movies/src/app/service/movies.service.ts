@@ -8,7 +8,6 @@ import {
   MovieCredits,
 } from "../models/movie";
 import { GenresDto } from "../models/genre";
-import { TvshowDetails, TvshowsDto } from "../models/tvshow";
 import { switchMap } from "rxjs/operators";
 import { of } from "rxjs";
 
@@ -107,22 +106,5 @@ export class MoviesService {
           return of(res.results);
         })
       );
-  }
-
-  getTvshows(page: number, type: string = "popular", count: number = 12) {
-    return this.http
-      .get<TvshowsDto>(
-        `${this.baseUrl}/tv/${type}?page=${page}&api_key=${this.apyKey}`
-      )
-      .pipe(
-        switchMap((res) => {
-          return of(res.results);
-        })
-      );
-  }
-  getTvshow(id: string) {
-    return this.http.get<TvshowDetails>(
-      `${this.baseUrl}/tv/${id}?api_key=${this.apyKey}`
-    );
   }
 }
