@@ -8,6 +8,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { switchMap } from "rxjs/operators";
 import { of } from "rxjs";
+import { GenresDto } from "../models/genre";
 
 @Injectable({
   providedIn: "root",
@@ -49,5 +50,41 @@ export class TvshowsService {
     return this.http.get<TvshowImages>(
       `${this.baseUrl}/tv/${id}/images?api_key=${this.apyKey}`
     );
+  }
+
+  searchTvShows(page: number, searchValue?: string) {
+    const uri = searchValue ? "/search/tv" : "/tv/popular";
+
+    return this.http
+      .get<TvshowsDto>(
+        `${this.baseUrl}${uri}?page=${page}&query=${searchValue}&api_key=${this.apyKey}`
+      )
+      .pipe(
+        switchMap((res) => {
+          return of(res.results);
+        })
+      );
+  }
+
+  getTvshowGenres() {
+    return this.http
+      .get<GenresDto>(`${this.baseUrl}/genre/tv/list?api_key=${this.apyKey}`)
+      .pipe(
+        switchMap((res) => {
+          return of(res.genres);
+        })
+      );
+  }
+
+  getTvshowByGenre(genreId: string, pageNumber: number) {
+    return this.http
+      .get<TvshowsDto>(
+        `${this.baseUrl}/discover/tv?with_genres=${genreId}&page=${pageNumber}&api_key=${this.apyKey}`
+      )
+      .pipe(
+        switchMap((res) => {
+          return of(res.results);
+        })
+      );
   }
 }

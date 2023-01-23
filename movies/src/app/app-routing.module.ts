@@ -29,6 +29,10 @@ const routes: Routes = [
     component: MoviesComponent,
   },
   {
+    path: "tv/genres/:genreId",
+    component: TvshowsComponent,
+  },
+  {
     path: "movie/:id",
     component: MovieComponent,
   },

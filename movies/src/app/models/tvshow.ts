@@ -104,6 +104,13 @@ export interface TvShowVideo {
   id: string;
 }
 
+export interface GenresTvshowDto {
+  genres: {
+    id: number;
+    name: string;
+  }[];
+}
+
 export const mapTvshowToItem = (tvshow: Tvshow): Item => {
   return {
     id: tvshow.id,
