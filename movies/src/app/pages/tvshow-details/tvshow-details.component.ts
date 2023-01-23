@@ -5,6 +5,7 @@ import { Item } from "../../models/item";
 import { TvshowsService } from "../../service/tvshows.service";
 import { IMAGES_SIZES } from "../../constants/images-sizes";
 import { mapTvshowDetailsToItem } from "../../models/tvshow";
+import { TvShowVideo } from "../../models/tvshow";
 
 @Component({
   selector: "tvshow-details",
@@ -13,6 +14,7 @@ import { mapTvshowDetailsToItem } from "../../models/tvshow";
 })
 export class TvshowDetailsComponent implements OnInit, OnDestroy {
   tvshow: Item | null = null;
+  tvShowVideos: TvShowVideo[] = [];
 
   imagesSizes = IMAGES_SIZES;
 
@@ -24,6 +26,7 @@ export class TvshowDetailsComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.route.params.pipe(first()).subscribe(({ id }) => {
       this.getCurrTvshow(id);
+      this.getCurrtvshowVideos(id);
     });
   }
 
@@ -34,6 +37,12 @@ export class TvshowDetailsComponent implements OnInit, OnDestroy {
   getCurrTvshow(id: string) {
     this.tvshowsService.getTvshow(id).subscribe((tvshowData) => {
       this.tvshow = mapTvshowDetailsToItem(tvshowData);
+    });
+  }
+
+  getCurrtvshowVideos(id: string) {
+    this.tvshowsService.getTvshowVideos(id).subscribe((tvshowVideosData) => {
+      this.tvShowVideos = tvshowVideosData;
     });
   }
 }

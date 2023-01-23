@@ -1,10 +1,49 @@
 @import "../../../styles/colors";
-.tvshow-image {
-  width: 100%;
-  border: 1px solid white;
-  padding: 5px;
+
+:host ::ng-deep {
+  .p-tabview-nav {
+    justify-content: center;
+
+    li .p-tabview-nav-link {
+      background: $bgColor;
+    }
+    li.p-highlight .p-tabview-nav-link {
+      background: $bgColor;
+    }
+  }
+}
+
+.poster {
+  max-width: 100%;
+}
+
+.overview {
+  line-height: 1.5;
+}
+
+.stats {
+  display: flex;
+  margin-bottom: 10px;
+
+  .label {
+    width: 200px;
+    font-weight: bold;
+    margin-right: 30px;
+  }
+
+  .value {
+    color: $primaryColor;
+  }
+}
+
+.actor {
+  padding: 10px;
   img {
-    object-fit: cover;
     width: 100%;
+  }
+  span {
+    display: block;
+    text-align: center;
+    margin: 10px 0px;
   }
 }

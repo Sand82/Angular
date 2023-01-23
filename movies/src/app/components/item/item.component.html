@@ -2,7 +2,7 @@
   <a
     class="movie-item"
     [routerLink]="
-      itemData.title ? '/movie/' + itemData.id : '/tvshows/' + itemData.id
+      itemData.isTvShow ? '/tvshows/' + itemData.id : '/movie/' + itemData.id
     "
   >
     <div class="movie-item-rating">
@@ -11,8 +11,10 @@
       >/10
     </div>
     <div class="movie-item-image">
-      <img [src]="imagesSizes.medium + itemData.poster_path" />
-      [alt]="itemData/\.title ?? itemData.name"
+      <img
+        [src]="imagesSizes.medium + itemData.poster_path"
+        [alt]="itemData.title ?? itemData.name"
+      />
     </div>
     <div class="movie-item-title">{{ itemData.title ?? itemData.name }}</div>
   </a>

@@ -59,6 +59,29 @@ export interface TvshowDetails {
   vote_count: number;
 }
 
+export interface TvshowGenres {
+  id: number;
+  name: string;
+}
+
+export interface tvShowVideoDto {
+  id: number;
+  results: TvShowVideo[];
+}
+
+export interface TvShowVideo {
+  iso_639_1: string;
+  iso_3166_1: string;
+  name: string;
+  key: string;
+  site: string;
+  size: number;
+  type: string;
+  official: boolean;
+  published_at: string;
+  id: string;
+}
+
 export const mapTvshowToItem = (tvshow: Tvshow): Item => {
   return {
     id: tvshow.id,
@@ -69,6 +92,9 @@ export const mapTvshowToItem = (tvshow: Tvshow): Item => {
     vote_count: tvshow.vote_count,
     release_date: tvshow.first_air_date,
     overview: tvshow.overview,
+    original_language: tvshow.original_language,
+    origin_country: tvshow.origin_country,
+    isTvShow: true,
   };
 };
 
@@ -82,5 +108,15 @@ export const mapTvshowDetailsToItem = (tvshow: TvshowDetails): Item => {
     vote_count: tvshow.vote_count,
     release_date: tvshow.first_air_date,
     overview: tvshow.overview,
+    original_language: tvshow.original_language,
+    origin_country: tvshow.origin_country,
+    genres: tvshow.genres,
+    episode_run_time: tvshow.episode_run_time.reduce(
+      (partialSum, a) => partialSum + a,
+      0
+    ),
+    number_of_episodes: tvshow.number_of_episodes,
+    number_of_seasons: tvshow.number_of_seasons,
+    isTvShow: true,
   };
 };

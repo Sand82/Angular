@@ -66,5 +66,6 @@ export const mapMovieToItem = (tvshow: Movie): Item => {
     vote_count: tvshow.vote_count,
     release_date: tvshow.release_date,
     overview: tvshow.overview,
+    isTvShow: false,
   };
 };
