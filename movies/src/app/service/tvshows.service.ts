@@ -3,6 +3,7 @@ import {
   TvshowsDto,
   TvShowVideoDto,
   TvshowImages,
+  TvshowCredits,
 } from "../models/tvshow";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
@@ -74,6 +75,12 @@ export class TvshowsService {
           return of(res.genres);
         })
       );
+  }
+
+  getTvshowCreditss(id: string) {
+    return this.http.get<TvshowCredits>(
+      `${this.baseUrl}/tv/${id}/credits?api_key=${this.apyKey}`
+    );
   }
 
   getTvshowByGenre(genreId: string, pageNumber: number) {

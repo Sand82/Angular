@@ -111,6 +111,13 @@ export interface GenresTvshowDto {
   }[];
 }
 
+export interface TvshowCredits {
+  cast: {
+    name: string;
+    profile_path: string;
+  }[];
+}
+
 export const mapTvshowToItem = (tvshow: Tvshow): Item => {
   return {
     id: tvshow.id,

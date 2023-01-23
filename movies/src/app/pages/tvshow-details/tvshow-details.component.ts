@@ -5,7 +5,7 @@ import { Item } from "../../models/item";
 import { TvshowsService } from "../../service/tvshows.service";
 import { IMAGES_SIZES } from "../../constants/images-sizes";
 import { mapTvshowDetailsToItem } from "../../models/tvshow";
-import { TvShowVideo, TvshowImages } from "../../models/tvshow";
+import { TvShowVideo, TvshowImages, TvshowCredits } from "../../models/tvshow";
 
 @Component({
   selector: "tvshow-details",
@@ -17,6 +17,7 @@ export class TvshowDetailsComponent implements OnInit, OnDestroy {
   tvShowVideos: TvShowVideo[] = [];
   imagesSizes = IMAGES_SIZES;
   tvShowImages: TvshowImages | null = null;
+  tvshowCredits: TvshowCredits | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -28,6 +29,7 @@ export class TvshowDetailsComponent implements OnInit, OnDestroy {
       this.getCurrTvshow(id);
       this.getCurrtvshowVideos(id);
       this.getCurrTvshowImages(id);
+      this.getCurrMovieCredits(id);
     });
   }
 
@@ -44,6 +46,13 @@ export class TvshowDetailsComponent implements OnInit, OnDestroy {
   getCurrtvshowVideos(id: string) {
     this.tvshowsService.getTvshowVideos(id).subscribe((tvshowVideosData) => {
       this.tvShowVideos = tvshowVideosData;
+    });
+  }
+
+  getCurrMovieCredits(id: string) {
+    this.tvshowsService.getTvshowCreditss(id).subscribe((tvshowCreditsData) => {
+      this.tvshowCredits = tvshowCreditsData;
+      console.log(tvshowCreditsData);
     });
   }
 
