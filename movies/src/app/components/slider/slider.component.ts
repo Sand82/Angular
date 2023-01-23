@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { Movie } from "../../models/movie";
+import { Item } from "../../models/item";
 import {
   trigger,
   state,
@@ -22,7 +22,7 @@ import { IMAGES_SIZES } from "../../constants/images-sizes";
   ],
 })
 export class SliderComponent implements OnInit {
-  @Input() items: Movie[] = [];
+  @Input() items: Item[] = [];
   @Input() isBanner: boolean = false;
 
   currentSlideIndex: number = 0;

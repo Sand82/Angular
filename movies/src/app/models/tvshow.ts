@@ -1,3 +1,5 @@
+import { Item } from "./item";
+
 export interface TvshowsDto {
   page: number;
   results: Tvshow[];
@@ -49,10 +51,36 @@ export interface TvshowDetails {
   original_name: string;
   overview: string;
   popularity: number;
-  poster_path: string | null;
+  poster_path: string;
   status: string;
   tagline: string;
   type: string;
   vote_average: number;
   vote_count: number;
 }
+
+export const mapTvshowToItem = (tvshow: Tvshow): Item => {
+  return {
+    id: tvshow.id,
+    title: tvshow.name,
+    poster_path: tvshow.poster_path,
+    vote_average: tvshow.vote_average,
+    backdrop_path: tvshow.backdrop_path,
+    vote_count: tvshow.vote_count,
+    release_date: tvshow.first_air_date,
+    overview: tvshow.overview,
+  };
+};
+
+export const mapTvshowDetailsToItem = (tvshow: TvshowDetails): Item => {
+  return {
+    id: tvshow.id,
+    title: tvshow.name,
+    poster_path: tvshow.poster_path,
+    vote_average: tvshow.vote_average,
+    backdrop_path: tvshow.backdrop_path,
+    vote_count: tvshow.vote_count,
+    release_date: tvshow.first_air_date,
+    overview: tvshow.overview,
+  };
+};

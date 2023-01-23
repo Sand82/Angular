@@ -1,5 +1,7 @@
 <p>tvshow-details works!</p>
 <ng-container *ngIf="tvshow">
+  <slider [items]="[tvshow]" [isBanner]="true"></slider>
+
   <div class="grid">
     <div class="col-12 md:col-3 lg:col-3">
       <div class="tvshow-image">

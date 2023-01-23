@@ -13,11 +13,9 @@ export class TvshowsService {
 
   constructor(private http: HttpClient) {}
 
-  getTvshows(page: number, type: string = "popular", count: number = 12) {
+  getTvshows(type: string, count: number = 12) {
     return this.http
-      .get<TvshowsDto>(
-        `${this.baseUrl}/tv/${type}?page=${page}&api_key=${this.apyKey}`
-      )
+      .get<TvshowsDto>(`${this.baseUrl}/tv/${type}?api_key=${this.apyKey}`)
       .pipe(
         switchMap((res) => {
           return of(res.results);

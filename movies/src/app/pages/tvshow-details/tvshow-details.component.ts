@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { first } from "rxjs";
-import { TvshowDetails } from "src/app/models/tvshow";
+import { Item } from "../../models/item";
 import { TvshowsService } from "../../service/tvshows.service";
 import { IMAGES_SIZES } from "../../constants/images-sizes";
+import { mapTvshowDetailsToItem } from "../../models/tvshow";
 
 @Component({
   selector: "tvshow-details",
@@ -11,7 +12,8 @@ import { IMAGES_SIZES } from "../../constants/images-sizes";
   styleUrls: ["./tvshow-details.component.scss"],
 })
 export class TvshowDetailsComponent implements OnInit, OnDestroy {
-  tvshow: TvshowDetails | null = null;
+  tvshow: Item | null = null;
+
   imagesSizes = IMAGES_SIZES;
 
   constructor(
@@ -21,7 +23,7 @@ export class TvshowDetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.route.params.pipe(first()).subscribe(({ id }) => {
-      this.getCurrMovie(id);
+      this.getCurrTvshow(id);
     });
   }
 
@@ -29,9 +31,9 @@ export class TvshowDetailsComponent implements OnInit, OnDestroy {
     console.log("Component destroyed");
   }
 
-  getCurrMovie(id: string) {
+  getCurrTvshow(id: string) {
     this.tvshowsService.getTvshow(id).subscribe((tvshowData) => {
-      this.tvshow = tvshowData;
+      this.tvshow = mapTvshowDetailsToItem(tvshowData);
     });
   }
 }

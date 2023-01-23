@@ -1,3 +1,5 @@
+import { Item } from "./item";
+
 export interface Movie {
   adult: boolean;
   backdrop_path: string;
@@ -53,3 +55,16 @@ export interface MovieCredits {
     profile_path: string;
   }[];
 }
+
+export const mapMovieToItem = (tvshow: Movie): Item => {
+  return {
+    id: tvshow.id,
+    title: tvshow.title,
+    poster_path: tvshow.poster_path,
+    vote_average: tvshow.vote_average,
+    backdrop_path: tvshow.backdrop_path,
+    vote_count: tvshow.vote_count,
+    release_date: tvshow.release_date,
+    overview: tvshow.overview,
+  };
+};
