@@ -17,5 +17,5 @@ export interface Item {
   episode_run_time?: number;
   number_of_episodes?: number;
   number_of_seasons?: number;
-  isTvShow: boolean;
+  isTvShow?: boolean;
 }

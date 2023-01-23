@@ -7,7 +7,9 @@ import {
   MovieVideo,
   MovieImages,
   MovieCredits,
+  mapMovieToItem,
 } from "../../models/movie";
+import { Item } from "../../models/item";
 import { first } from "rxjs";
 
 @Component({
@@ -21,7 +23,7 @@ export class MovieComponent implements OnInit, OnDestroy {
   imagesSizes = IMAGES_SIZES;
   movieImages: MovieImages | null = null;
   movieCredits: MovieCredits | null = null;
-  moviesSimilar: Movie[] = [];
+  moviesSimilar: Item[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -68,7 +70,7 @@ export class MovieComponent implements OnInit, OnDestroy {
 
   getCurrMovieSimilar(id: string) {
     this.moviesService.getSimilarMovies(id).subscribe((moviesSimilarData) => {
-      this.moviesSimilar = moviesSimilarData;
+      this.moviesSimilar = moviesSimilarData.map((m) => mapMovieToItem(m));
     });
   }
 }

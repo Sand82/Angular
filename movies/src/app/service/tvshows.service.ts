@@ -1,4 +1,9 @@
-import { TvshowDetails, TvshowsDto, tvShowVideoDto } from "../models/tvshow";
+import {
+  TvshowDetails,
+  TvshowsDto,
+  TvShowVideoDto,
+  TvshowImages,
+} from "../models/tvshow";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { switchMap } from "rxjs/operators";
@@ -30,7 +35,7 @@ export class TvshowsService {
 
   getTvshowVideos(id: string) {
     return this.http
-      .get<tvShowVideoDto>(
+      .get<TvShowVideoDto>(
         `${this.baseUrl}/tv/${id}/videos?api_key=${this.apyKey}`
       )
       .pipe(
@@ -38,5 +43,11 @@ export class TvshowsService {
           return of(res.results);
         })
       );
+  }
+
+  getTvshowImages(id: string) {
+    return this.http.get<TvshowImages>(
+      `${this.baseUrl}/tv/${id}/images?api_key=${this.apyKey}`
+    );
   }
 }
