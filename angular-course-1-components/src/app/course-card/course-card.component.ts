@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-
 import { Course } from "../model/course";
 
 @Component({
@@ -24,5 +23,31 @@ export class CourseCardComponent implements OnInit {
     console.log("card component - button clicked...");
 
     this.courseEmitter.emit(this.course);
+  }
+
+  isImageVisible() {
+    return this.course.iconUrl && this.course;
+  }
+
+  cardClasses() {
+    if (this.course.category == "BEGINNER") {
+      return ["beginner"];
+    }
+
+    // if (this.course.category == "BEGINNER") {
+    //   return "beginner";
+    // }
+
+    // if (this.course.category == "BEGINNER") {
+    //   return {"beginner": true};
+    // }
+
+    // return {
+    //   'beginner': this.course.category == "BEGINNER",
+    // };
+  }
+
+  cardStyles() {
+    return { "text-decoration": "underline" };
   }
 }
