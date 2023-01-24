@@ -4,8 +4,26 @@
     src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png"
   />
 </div>
+<!-- {{ courses | json }} -->
 
-<div class="courses">
+<div *ngFor="let pair of course | keyvalue">
+  {{ pair.key + ": " + pair.value }}
+</div>
+
+<div class="demo">
+  <div>Start Date: {{ startDate | date : "MMM.dd.yyyy" }}</div>
+  <div>{{ title | uppercase }}</div>
+  <div>{{ title | lowercase }}</div>
+  <div>{{ title | titlecase }}</div>
+  <div>{{ price | number : "3.3-5" }}</div>
+  <div>{{ price | currency }}</div>
+  <div>{{ price | currency : "EUR" }}</div>
+  <div>{{ title | slice : 0 : 7 }}</div>
+</div>
+
+<div class="courses" #conteiner>
+  <button (click)="onCoursesEdited()">Edit Courses</button>
+
   <course-card
     *ngFor="
       let course of courses;
@@ -22,5 +40,27 @@
     [class.is-last]="isLast"
     [class.is-even]="isEven"
     [class.is-odd]="isOdd"
+  ></course-card>
+
+  <course-card
+    (courseSelected)="onCourseSelected($event)"
+    [course]="courses[0]"
+  ></course-card>
+
+  <course-card
+    (courseSelected)="onCourseSelected($event)"
+    [course]="courses[1]"
+  ></course-card>
+
+  <course-card
+    #cardRef1
+    (courseSelected)="onCourseSelected($event)"
+    [course]="courses[0]"
+  ></course-card>
+
+  <course-card
+    #cardRef2
+    (courseSelected)="onCourseSelected($event)"
+    [course]="courses[1]"
   ></course-card>
 </div>

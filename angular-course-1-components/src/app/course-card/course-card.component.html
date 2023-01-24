@@ -1,9 +1,10 @@
 <ng-container *ngIf="course">
   <div class="course-card" [ngClass]="cardClasses()">
     <div class="course-title" [ngStyle]="cardStyles()">
-      {{ cardIndex }}. {{ course.description }}
+      {{ cardIndex || "" }}. {{ course.description }}
     </div>
     <img
+      #courseImage
       width="300"
       alt="Angular Logo"
       [src]="course.iconUrl"
