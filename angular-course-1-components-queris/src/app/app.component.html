@@ -1,0 +1,41 @@
+<div class="top-menu">
+  <img
+    class="logo"
+    src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png"
+  />
+</div>
+
+<!-- <div class="courses" *ngFor="let course of courses">
+  <course-card [course]="course"> </course-card>
+</div> -->
+
+<div class="courses" #container *ngIf="courses[0] as course">
+  <ng-template #blankImage let-courseName="description">
+    <p class="warn">{{ courseName }}has no image yet.</p>
+
+    <img src="/assets/empty-image.png" alt="" />
+  </ng-template>
+
+  <ng-container
+    *ngTemplateOutlet="blankImage; context: { description: course.description }"
+  ></ng-container>
+
+  <hr />
+  <hr />
+
+  <course-card
+    #cardRef1
+    [course]="course"
+    (courseSelected)="onCourseSelected($event)"
+    [noImageTpl]="blankImage"
+  >
+    <course-image [src]="course.iconUrl"></course-image>
+
+    <!-- <course-image [src]="courses[1].iconUrl"></course-image>
+    <course-image [src]="courses[2].iconUrl"></course-image> -->
+
+    <div class="course-description">
+      {{ course.longDescription }}
+    </div>
+  </course-card>
+</div>

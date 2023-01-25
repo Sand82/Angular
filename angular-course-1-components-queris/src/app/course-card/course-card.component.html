@@ -1,0 +1,29 @@
+<div class="courses" *ngIf="course" #container>
+  <div class="course-card">
+    <div class="course-title">{{ course.description }}</div>
+
+    <!-- <ng-container ></ng-container> -->
+    <!-- <ng-content select="img"> </ng-content> -->
+    <!-- <ng-content select=".course-image"> </ng-content> -->
+
+    <ng-content
+      select="course-image"
+      *ngIf="course.iconUrl; else noImage"
+    ></ng-content>
+
+    <ng-template #noImage>
+      <ng-container
+        *ngTemplateOutlet="
+          noImageTpl;
+          context: { description: course.description }
+        "
+      ></ng-container>
+    </ng-template>
+
+    <div class="course-description">
+      {{ course.longDescription }}
+    </div>
+
+    <button (click)="onCourseViewed()">View Course</button>
+  </div>
+</div>
