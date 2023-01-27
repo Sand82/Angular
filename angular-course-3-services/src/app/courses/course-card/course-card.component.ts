@@ -15,10 +15,10 @@ import {
   QueryList,
   ViewEncapsulation,
 } from "@angular/core";
-import { Course } from "../model/course";
+import { Course } from "../../model/course";
 import { CourseImageComponent } from "../course-image/course-image.component";
 import { CourseService } from "../services/course.service";
-import { COURSES_SERVICE } from "../app.component";
+import { COURSES_SERVICE } from "../../app.component";
 
 @Component({
   selector: "course-card",

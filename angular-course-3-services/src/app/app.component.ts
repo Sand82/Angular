@@ -18,12 +18,12 @@ import {
   ViewChildren,
 } from "@angular/core";
 import { COURSES } from "../db-data";
-import { CourseCardComponent } from "./course-card/course-card.component";
-import { HighlightedDirective } from "./directives/highlighted.directive";
+import { CourseCardComponent } from "./courses/course-card/course-card.component";
+import { HighlightedDirective } from "./courses/directives/highlighted.directive";
 import { Observable } from "rxjs";
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Course } from "./model/course";
-import { CourseService } from "./services/course.service";
+import { CourseService } from "./courses/services/course.service";
 import { AppConfig, APP_CONFIG, CONFIG_TOKEN } from "./config";
 
 function coursesServiceProvider(http: HttpClient): CourseService {
