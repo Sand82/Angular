@@ -1,6 +1,10 @@
 <h1>My products</h1>
-<input type="text" [(ngModel)]="productName" />
-<button *ngIf="!IsDesabled" (click)="onAddProduct()">Add product</button>
+
+<form (ngSubmit)="onAddProduct(f)" #f="ngForm">
+  <input type="text" ngModel name="productName" required />
+  <button type="submit">Add product</button>
+</form>
+
 <app-product
   *ngFor="let product of products"
   [productName]="product"

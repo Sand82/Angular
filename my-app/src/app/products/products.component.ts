@@ -1,24 +1,34 @@
-import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ProductServiceService } from '../services/product-service.service';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
 })
-export class ProductsComponent {
-  productName = 'A book';
+export class ProductsComponent implements OnInit {
+  productName = '';
   IsDesabled = true;
 
-  products = ['A book', 'A tree'];
+  products: string[] = [];
 
-  constructor() {
+  constructor(private productsService: ProductServiceService) {
     setTimeout(() => {
       this.IsDesabled = false;
     }, 3000);
   }
+  ngOnInit(): void {
+    this.productsService.productsUpdated.subscribe(() => {
+      this.products = this.productsService.getProducts();
+    });
+  }
 
-  onAddProduct() {
-    this.products.push(this.productName);
+  onAddProduct(form: NgForm) {
+    if (form.valid) {
+      this.productsService.addProduct(form.value.productName);
+    }
   }
 
   onRemoveProduct(productName: string) {
