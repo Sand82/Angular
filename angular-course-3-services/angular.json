@@ -18,10 +18,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               {
                 "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
@@ -63,6 +60,11 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "fr": {
+              "aot": true,
+              "outputPath": "dist/angular-course-fr/",
+              "i18nMissingTranslation": "ignore"
             }
           }
         },
@@ -74,6 +76,9 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-course:build:production"
+            },
+            "fr": {
+              "browserTarget": "angular-course:build:fr"
             }
           }
         },
@@ -98,10 +103,7 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
+            "assets": ["src/favicon.ico", "src/assets"]
           }
         }
       }

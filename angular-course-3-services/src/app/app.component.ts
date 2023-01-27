@@ -10,6 +10,7 @@ import {
   ElementRef,
   Inject,
   InjectionToken,
+  Injector,
   OnChanges,
   OnDestroy,
   OnInit,
@@ -25,6 +26,8 @@ import { HttpClient, HttpParams } from "@angular/common/http";
 import { Course } from "./model/course";
 import { CourseService } from "./courses/services/course.service";
 import { AppConfig, APP_CONFIG, CONFIG_TOKEN } from "./config";
+import { createCustomElement } from "@angular/elements";
+import { CourseTitleComponent } from "./course-title/course-title.component";
 
 function coursesServiceProvider(http: HttpClient): CourseService {
   return new CourseService(http);
@@ -68,7 +71,9 @@ export class AppComponent
 
   //courses: Course[]
 
-  courses = COURSES;
+  courses: Course[] = COURSES;
+
+  coursesTotal = this.courses.length;
 
   //constructor(@Inject(COURSES_SERVICE) private coursesService: CourseService) {}
   //constructor(@Self() private coursesService: CourseService) {} //override default behavior of dependency injection and this sevice instance come from component him self
@@ -76,52 +81,62 @@ export class AppComponent
   constructor(
     private coursesService: CourseService,
     @Inject(CONFIG_TOKEN) private config: AppConfig,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    private injector: Injector
   ) {
-    console.log("constructor");
+    //console.log("constructor");
   }
 
   ngOnInit() {
+    const htmlElement = createCustomElement(CourseTitleComponent, {
+      injector: this.injector,
+    });
+
+    customElements.define("course-title", htmlElement);
+
     // //this.courses$ = this.coursesService.loadCourses();
     // this.coursesService.loadCourses().subscribe((data) => {
     //   this.courses = data;
     //   //this.cd.markForCheck(); //first way to implement change detection listener
     // });
-
-    console.log("ngOnInit");
+    //console.log("ngOnInit");
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log("ngOnChanges");
+    //console.log("ngOnChanges");
   }
 
   ngOnDestroy(): void {
-    console.log("ngOnDestroy");
+    //console.log("ngOnDestroy");
   }
 
   ngDoCheck() {
     //first way to implement change detection listener
     this.cd.markForCheck();
 
-    console.log("ngDoCheck");
+    //console.log("ngDoCheck");
   }
   ngAfterContentInit() {
-    console.log("ngAfterContentInit");
+    //console.log("ngAfterContentInit");
   }
 
   ngAfterContentChecked() {
-    console.log("ngAfterContentChecked");
+    //console.log("ngAfterContentChecked");
   }
 
   ngAfterViewInit(): void {
-    console.log("ngAfterViewInit");
+    //console.log("ngAfterViewInit");
   }
 
   ngAfterViewChecked(): void {
-    console.log("ngAfterViewChecked");
+    //console.log("ngAfterViewChecked");
   }
 
   onEditCourse() {
+    this.courses[1].category = "ADVANCED";
+
+    console.log(this.courses[1].category);
+
     // const currCourse = this.courses[0];
     // const newCourse: any = { ...currCourse };
     // newCourse.description = "New Value";
