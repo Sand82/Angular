@@ -3,9 +3,22 @@ import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Course } from "../model/course";
 
-@Injectable()
+let counter = 0;
+
+@Injectable({
+  // providedIn: "root", // first way
+  // useFactory: (http) => new CourseService(http),
+  // deps: [HttpClient],
+
+  // providedIn: "root", // second way
+  // useClass: CourseService,
+
+  providedIn: "root", // configuration to tree shakable provider
+})
 export class CourseService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    console.log(++counter);
+  }
 
   baseUrl: string = "http://localhost:9100/api";
 

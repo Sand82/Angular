@@ -1,6 +1,8 @@
 import {
   AfterContentInit,
   AfterViewInit,
+  Attribute,
+  ChangeDetectionStrategy,
   Component,
   ContentChildren,
   ElementRef,
@@ -8,6 +10,7 @@ import {
   Inject,
   Input,
   OnInit,
+  Optional,
   Output,
   QueryList,
   ViewEncapsulation,
@@ -21,6 +24,7 @@ import { COURSES_SERVICE } from "../app.component";
   selector: "course-card",
   templateUrl: "./course-card.component.html",
   styleUrls: ["./course-card.component.css"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CourseCardComponent implements OnInit {
   @Input()
@@ -32,9 +36,19 @@ export class CourseCardComponent implements OnInit {
   @Output("courseChanged")
   courseEmitter = new EventEmitter<Course>();
 
-  constructor(@Inject(COURSES_SERVICE) private coursesService: CourseService) {}
+  //constructor(@Inject(COURSES_SERVICE) private coursesService: CourseService) {}
+  constructor(
+    @Optional() private coursesService: CourseService,
+    @Attribute("type") private type: string
+  ) {
+    console.log(type);
+  } //Optional() decorator to add dependency to constructor not related wth provider.
 
   ngOnInit() {}
+
+  onTitleChanged(newTitle: string) {
+    this.course.description = newTitle;
+  }
 
   onSaveClicked(description: string) {
     this.courseEmitter.emit({ ...this.course, description });
