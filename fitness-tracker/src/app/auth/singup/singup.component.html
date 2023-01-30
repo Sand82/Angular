@@ -4,6 +4,7 @@
     fxLayoutAlign="center center"
     #f="ngForm"
     (ngSubmit)="onSubmit(f)"
+    fxLayoutGap="10px"
   >
     <mat-form-field hintLabel="Shoud be valid email address." appearance="fill">
       <mat-label>Email</mat-label>
@@ -24,6 +25,7 @@
         >E-Mail is invalid.</mat-error
       >
     </mat-form-field>
+
     <mat-form-field
       appearance="fill"
       hintLabel="Shoud be at least 4 characters long."
@@ -42,7 +44,37 @@
       <mat-hint align="end">{{ pwInput.value?.length }}/4</mat-hint>
       <mat-error>Has to be at least 4 symbols long.</mat-error>
     </mat-form-field>
-    <button type="submit" mat-raised-button color="primary">Submit</button>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Your birthdata"
+        [matDatepicker]="picker"
+        [max]="maxDate"
+        ngModel
+        name="birthdate"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-checkbox
+      ngModel
+      name="agree"
+      required
+      labelPosition="before"
+      color="primary"
+      >Agree to Terms and Conditions</mat-checkbox
+    >
+
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [disabled]="f.invalid"
+    >
+      Submit
+    </button>
   </form>
 </section>
 
