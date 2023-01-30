@@ -17,7 +17,7 @@
         required
         #emailInput="ngModel"
       />
-      <mat-hint></mat-hint>
+
       <mat-error *ngIf="emailInput.hasError('required')"
         >Field must not be empty.</mat-error
       >
@@ -41,7 +41,7 @@
         minlength="4"
         #pwInput="ngModel"
       />
-      <mat-hint align="end">{{ pwInput.value?.length }}/4</mat-hint>
+
       <mat-error>Has to be at least 4 symbols long.</mat-error>
     </mat-form-field>
 
