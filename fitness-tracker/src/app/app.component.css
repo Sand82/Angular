@@ -5,21 +5,5 @@ mat-sidenav {
 }
 
 mat-sidenav {
-  width: 250px;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-}
-
-a:hover,
-a:active {
-  color: lightgray;
-}
-
-.navigations-items {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  width: 300px;
 }
