@@ -7,18 +7,24 @@
   <div><a routerLink="/">LOGO</a></div>
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <ul fxLayout fxLayoutGap="10px" class="navigations-items">
-      <li>
-        <a routerLink="/signup">Sing up</a>
-      </li>
-      <li>
-        <a routerLink="/login">Login</a>
-      </li>
-      <li>
-        <a routerLink="/training">Training</a>
-      </li>
-      <li>
-        <a routerLink="/logout">Logout</a>
-      </li>
+      <ng-container *ngIf="!isAuth">
+        <li>
+          <a routerLink="/signup">Sing up</a>
+        </li>
+        <li>
+          <a routerLink="/login">Login</a>
+        </li>
+      </ng-container>
+      <ng-container *ngIf="isAuth">
+        <li>
+          <a routerLink="/training">Training</a>
+        </li>
+        <li>
+          <a class="header-nav-logout" (click)="onLogout()" routerLink="/logout"
+            >Logout</a
+          >
+        </li>
+      </ng-container>
     </ul>
   </div>
 </mat-toolbar>

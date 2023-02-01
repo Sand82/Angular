@@ -11,3 +11,7 @@ a:active {
 .navigations-items {
   list-style: none;
 }
+
+.header-nav-logout {
+  cursor: pointer;
+}
