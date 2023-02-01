@@ -77,7 +77,7 @@ export class TrainingService {
         date: new Date(),
         state: 'cancelled',
         duration: this.runningExercise.duration * (progress / 100),
-        calories: this.runningExercise.duration * (progress / 100),
+        calories: this.runningExercise.calories * (progress / 10),
       });
     }
 
@@ -87,5 +87,9 @@ export class TrainingService {
 
   getRunningExercise() {
     return { ...this.runningExercise };
+  }
+
+  getAllExercises() {
+    return this.exercises.slice();
   }
 }
