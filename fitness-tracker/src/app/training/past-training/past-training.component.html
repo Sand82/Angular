@@ -1,6 +1,13 @@
-<mat-form-field>
-  <input matInput type="text" (keyup)="doFilter($event)" placeholder="Filter" />
-</mat-form-field>
+<div>
+  <mat-form-field>
+    <input
+      matInput
+      type="text"
+      (keyup)="doFilter($event)"
+      placeholder="Filter"
+    />
+  </mat-form-field>
+</div>
 
 <table mat-table [dataSource]="dataSource" matSort>
   <ng-container matColumnDef="date">
@@ -32,3 +39,10 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </ng-container>
 </table>
+
+<mat-paginator
+  [pageSizeOptions]="[1, 5, 10, 20]"
+  showFirstLastButtons
+  aria-label="Select page of periodic elements"
+>
+</mat-paginator>
