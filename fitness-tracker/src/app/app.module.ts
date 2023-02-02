@@ -18,6 +18,10 @@ import { PastTrainingComponent } from './training/past-training/past-training.co
 import { StopTrainingComponent } from './training/stopTraining/stop-training-component';
 import { AuthService } from './auth/auth.service';
 import { TrainingService } from './training/training.service';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from '../environments/environment';
+import { AngularFireAnalyticsModule } from '@angular/fire/compat/analytics';
 
 @NgModule({
   declarations: [
@@ -41,6 +45,9 @@ import { TrainingService } from './training/training.service';
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAnalyticsModule,
   ],
   providers: [AuthService, TrainingService],
   bootstrap: [AppComponent],
