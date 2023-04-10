@@ -1,0 +1,85 @@
+<form #f="ngForm" (ngSubmit)="submit(f)">
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input
+      ngModel
+      required
+      minlength="3"
+      pattern="Sand"
+      name="firstName"
+      #firstName="ngModel"
+      (change)="log(firstName)"
+      type="text"
+      id="firstName"
+      class="form-control"
+    />
+    <div
+      class="alert alert-danger"
+      *ngIf="firstName.touched && !firstName.valid"
+    >
+      <div *ngIf="firstName.errors?.['required']">First Name is required.</div>
+      <div *ngIf="firstName.errors?.['minlength']">
+        First Name should be more than
+        {{firstName.errors?.['minlength'].requiredLength}} symbols.
+      </div>
+      <div *ngIf="firstName.errors?.['pattern']">
+        First Name don't match the pattern.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="coment">Comment</label>
+    <textarea
+      ngModel
+      name="coment"
+      id="coment"
+      type="textArea"
+      cols="30"
+      rows="10"
+      class="form-control"
+    ></textarea>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" ngModel name="isSubscribed" />Subscribe to mailing
+      list
+    </label>
+  </div>
+  <div class="form-group">
+    <label for="contactMethod">Contact Method</label>
+    <select
+      multiple
+      ngModel
+      name="contactMethod"
+      id="contactMethod"
+      class="form-control"
+    >
+      <option selected></option>
+      <option *ngFor="let el of contactMethod" [ngValue]="el">
+        {{ el.name }}
+      </option>
+    </select>
+  </div>
+  <p>
+    {{ f.value | json }}
+  </p>
+  <div class="radio">
+    <label>
+      <input type="radio" ngModel name="contactMethod" value="1" />
+      Email
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" ngModel name="contactMethod" value="2" />
+      Phone
+    </label>
+  </div>
+  <button
+    style="margin-top: 15px"
+    class="btn btn-primary"
+    [disabled]="!f.valid"
+  >
+    Submit
+  </button>
+</form>

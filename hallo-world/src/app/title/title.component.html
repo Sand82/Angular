@@ -1,0 +1,4 @@
+<div>
+  <h3>Title : {{ inputValue | titlecase }}</h3>
+  <input [(ngModel)]="inputValue" (keyup.enter)="onChange()" />
+</div>

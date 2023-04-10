@@ -1,0 +1,10 @@
+<div (click)="onLike()">
+  <span>
+    <i
+      class="bi bi-heart-fill"
+      [class.activeLike]="isLiked"
+      [class.isNotActive]="!isLiked"
+    ></i>
+  </span>
+  <div>{{ likesCount }}</div>
+</div>

@@ -1,0 +1,8 @@
+.activeLike {
+  color: deeppink;
+}
+
+.isNotActive {
+  color: #ccc;
+  cursor: pointer;
+}
