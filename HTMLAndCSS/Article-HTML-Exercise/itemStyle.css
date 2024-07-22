@@ -11,6 +11,21 @@ body {
 .container {
   margin: 50px auto;
   width: 825px;
+  position: relative;
+}
+
+.container::after {
+  content: "SALE";
+  position: absolute;
+  font-size: 12px;
+  text-transform: uppercase;
+  top: -13px;
+  left: -33px;
+  color: white;
+  background-color: #ec2f2f;
+  padding: 7px 15px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
 article {
@@ -58,13 +73,45 @@ h3 {
 a:link,
 a:visited {
   color: black;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  display: inline-block;
 }
 
 a:hover,
 a:active {
   text-decoration: none;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  display: inline-block;
+}
+.colors {
+  margin-bottom: 15px;
+}
+
+.color {
+  padding: 10px 10px;
+  background-color: black;
+  display: inline-block;
+  margin: 0px 10px 0 0;
+}
+
+.second {
+  background-color: #2f6ee2;
+}
+
+.third {
+  background-color: #ec2f2f;
+}
+
+.fourth {
+  background-color: #90cc20;
+}
+
+.fifth {
+  background-color: rgb(101, 218, 47);
+}
+
+.sixth {
+  background-color: #885214;
 }
 
 h3 {
