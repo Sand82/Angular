@@ -1,0 +1,16 @@
+.nav {
+  position: absolute;
+  width: fit-content;
+  padding: 2.4rem;
+  font-size: 1.6rem;
+}
+
+.nav-ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.nav-link {
+  text-decoration: none;
+}

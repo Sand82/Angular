@@ -1,0 +1,15 @@
+<div class="vehikal">
+  <a class="vehikal-link" routerLink="{{ car.id }}">
+    <div>
+      <img class="vehikal-img" [src]="car.imgUrl" alt="" />
+    </div>
+    <p class="vehikal-brand">Brand: {{ car.brand }}</p>
+    <div class="vehikal-info">
+      <ul>
+        <li>Model:{{ car.model }}</li>
+        <li>Color: {{ car.color }}</li>
+        <li>Year: {{ car.year }}</li>
+      </ul>
+    </div>
+  </a>
+</div>

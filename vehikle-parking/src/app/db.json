@@ -1,0 +1,114 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "imgUrl": "https://www.auto-press.net/gallery/article/images_big/gallery_picture_0376788001390286021.jpg",
+      "brand": "Opel",
+      "model": "Meriva",
+      "year": 2018,
+      "color": "Red",
+      "description": "Power comes from a lovely 1.4-litre turbocharged engine boasting 103 kW and 200 Nm of torque. Those figures will sound familiar if you’re an Opel fan, as this is the same engine which can be found under the bonnet of the Opel Astra GTC coupe – a car which I particularly enjoyed driving. The engine is smooth and there’s no hesitation when you want to overtake. Power is sent from the engine to the front wheels via a typically Opel solid and clunky six-speed gearbox. It’s interesting to note that Opel isn’t offering an automatic derivative for this model as I’d assume most customers would appreciate the ease of use. Despite its 1.4-litre size, the Opel Meriva is a little thirstier than expected. Our test route to Cape Point and back saw a figure of 8.2 l/100km."
+    },
+    {
+      "id": 2,
+      "imgUrl": "https://imgd.aeplcdn.com//642x361//n/cw/ec/152081/bmw-i7-right-front-three-quarter4.jpeg?",
+      "brand": "BMW",
+      "model": "I7 Gran Coupe",
+      "year": 2024,
+      "color": "Brown",
+      "description": "The BMW i7 has two new trim levels for 2024: the now standard i7 eDrive50 and the top-of-the-line i7 M70. These trims are positioned above and below the existing i7 xDrive60 trim. The eDrive50 offers a single electric motor with rear-wheel drive, a lower starting MSRP of $105,700*, and the most range of all i7 models with up to 321 miles. The M70 is the new, performance-focused trim with dual motor all-wheel drive and 650 horsepower, starting at $168,500*."
+    },
+    {
+      "id": 3,
+      "imgUrl": "https://imgd.aeplcdn.com/664x374/n/cw/ec/22803/audi-q7-facelift-exterior-1.jpeg",
+      "brand": "Audi",
+      "model": "Q5",
+      "year": 2022,
+      "color": "White",
+      "description": "Comfortable, capable, and quick, the Audi Q7 is one of the best luxury SUVs on the market, a distinction we made official by awarding it two straight 10Best Trucks and SUVs awards. Our long-term example arrived after the first trophy was handed out for 2017—the first year for the second-generation Q7, which improved upon its predecessor without abandoning its best attributes. Crucially, the current Q7 shed noticeable mass while retaining its family-friendly seven-passenger seating configuration and standard Quattro all-wheel drive. A standard 252-hp turbocharged 2.0-liter inline-four now opens the Audi’s lineup, but we opted to spend 40,000 miles with the available 333-hp supercharged 3.0-liter V-6 with up to 7700 pounds of towing capacity. A smooth-shifting eight-speed automatic transmission is standard across the board."
+    },
+    {
+      "id": 4,
+      "imgUrl": "https://prod.pictures.autoscout24.net/listing-images/3e0c4a9e-d41b-4a93-8c2a-1277d0bae616_e8ccec1f-ebf3-4a3d-8b02-c948c000d474.jpg",
+      "brand": "Toyota",
+      "model": "Corolla",
+      "year": 2023,
+      "color": "Brown",
+      "description": "The 12th-generation Toyota Corolla offers impressive fuel efficiency and an abundance of standard safety features in a compact package that looks far more exciting than it is to drive. The most powerful Corolla gets a four-cylinder engine with a mere 169 horsepower that fails to accelerate the car with any verve. For 2017, the Corolla gets updated front styling and new standard features, like a backup camera. There are new standard active safety features, too, including forward pre-collision warning with pedestrian detection, automatic emergency braking, lane departure warning and prevention, automatic high-beam headlights and adaptive cruise control."
+    },
+    {
+      "id": 5,
+      "imgUrl": "https://contentmonster.ru/data/tmp/export/64i5bd6dba8c00690.42094799.jpg",
+      "brand": "Ford",
+      "model": "Escort",
+      "year": 2017,
+      "color": "Dark red",
+      "description": "An underpowered 132-hp 1.8-liter four-cylinder is the standard engine. The LE Eco uses a specially tuned version that makes 140 horsepower and slightly less torque. A continuously variable automatic transmission (CVT) is standard equipment; a six-speed manual is optional only on the SE. The All-New Ford Escort makes choosing a car easy. More room allows you to bring along the family, while low fuel consumption lets you to take on more miles. Discover the peace of mind of carrying what you need when you need it with an impressive cargo space. Your safety is always the main priority, which is why it’s been embedded into Escort’s DNA. Affordable spare parts and customizable maintenance plans make this Escort an easy choice for everyone."
+    },
+    {
+      "id": 6,
+      "imgUrl": "https://di-uploads-pod18.dealerinspire.com/germainhondaofbeavercreek/uploads/2023/02/2023Accord1.jpg",
+      "brand": "Honda",
+      "model": "Accord",
+      "year": 2023,
+      "color": "Black",
+      "description": "The 2023 Honda Accord is an All-New midsize sedan featuring a highly responsive 192-HP turbocharged engine and an available 204-HP hybrid powertrain for remarkable gas mileage and improved acceleration. The latest Accord is a solid choice for a family sedan. It's roomy, practical and easy to drive. It's also impressively fuel-efficient if you get the hybrid powertrain. But some of the Accord's newest tech and features are exclusively available on the top trim level, the Touring. Unless you're willing to shell out for a fully loaded model, the Accord just doesn't stand out in the class like it used to."
+    }
+  ],
+  "motorbikes": [
+    {
+      "id": 1,
+      "imgUrl": "https://www.honda.co.uk/content/dam/central/motorcycles/Coming-soon-2024/24ym-coming-soon-hornet-eicma-video-mobile.jpg/_jcr_content/renditions/m_r.jpg",
+      "brand": "Honda",
+      "model": "CX 500 turbo",
+      "year": 2018,
+      "color": "Black",
+      "description": ""
+    },
+    {
+      "id": 2,
+      "imgUrl": "https://images.netdirector.co.uk/gforces-auto/image/upload/w_375,h_281,q_auto,c_fill,f_auto,fl_lossy/auto-client/046613bd7faf5ea6a7b80e0ac9c56bbf/bmw_motorrad_new_s_1000_rr_mobile.jpg",
+      "brand": "BMW",
+      "model": "S 1000 RR",
+      "year": 2020,
+      "color": "Red",
+      "description": ""
+    },
+    {
+      "id": 3,
+      "imgUrl": "https://motohouse.bg/wp-content/uploads/2024/03/NINJA_125_KAWASAKI_2024_LIME_GREEN_EBONY_MOTOHOUSE-300x300.jpg",
+      "brand": "Kavazaki",
+      "model": "Ninja® ZX™-6R ABS KRT",
+      "year": 2024,
+      "color": "Green",
+      "description": ""
+    },
+    {
+      "id": 4,
+      "imgUrl": "https://images.ctfassets.net/x7j9qwvpvr5s/44VVijspCKvE6idM0PKlyi/6f095c98e8c66b4d27d2c56d2fdce0f5/Model-Menu-MY20-Superleggera-V4.png",
+      "brand": "Ducati",
+      "model": "Panigal V4",
+      "year": 2024,
+      "color": "Red",
+      "description": ""
+    },
+    {
+      "id": 5,
+      "imgUrl": "https://suzukicycles.com/-/media/project/cycles/images/products/motorcycles/gsx-8r/studio-gallery/blue/gsx800frqm4_ysf_right_2400x1500.png",
+      "brand": "Suzuki",
+      "model": "GSX-8R",
+      "year": 2024,
+      "color": "Blue",
+      "description": ""
+    },
+    {
+      "id": 6,
+      "imgUrl": "https://i.pinimg.com/736x/85/a5/8e/85a58e44ce66bfe7601167ecf2b74673.jpg",
+      "brand": "Yamaha",
+      "model": "R6-0928",
+      "year": 2018,
+      "color": "Black",
+      "description": ""
+    }
+  ]
+}

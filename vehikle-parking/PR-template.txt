@@ -1,0 +1,10 @@
+  ### Description
+   
+    `Link to your task'
+    `Short description of the implementation/solution`
+
+  ---
+  ### Checklist
+
+  * [x] I have followed the branch and commit strategy
+  * [x] I have tested my implementation in the browser
