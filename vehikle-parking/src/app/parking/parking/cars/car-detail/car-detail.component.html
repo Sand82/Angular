@@ -1,12 +1,12 @@
-<div class="car-container">
-  <div class="car-details" *ngIf="car | async as car">
-    <img class="car-details-img" [src]="car.imgUrl" alt="" />
+<div class="vehikal-datail-container">
+  <div class="vehikal-datail-details" *ngIf="car | async as car">
+    <img class="vehikal-datail-img" [src]="car.imgUrl" alt="" />
 
-    <div class="car-details-info">
+    <div class="vehikal-datail-info">
       <h2>{{ car.brand }} {{ car.model }}</h2>
       <p>Color: {{ car.color }}</p>
     </div>
-    <div class="car-details-description">
+    <div class="vehikal-datail-description">
       <p>{{ car.description }}</p>
     </div>
   </div>

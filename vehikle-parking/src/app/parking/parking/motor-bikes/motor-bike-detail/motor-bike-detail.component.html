@@ -1,0 +1,13 @@
+<div class="vehikal-datail-container">
+  <div class="vehikal-datail-details" *ngIf="motorBike | async as motorBike">
+    <img class="vehikal-datail-img" [src]="motorBike.imgUrl" alt="" />
+
+    <div class="vehikal-datail-info">
+      <h2>{{ motorBike.brand }} {{ motorBike.model }}</h2>
+      <p>Color: {{ motorBike.color }}</p>
+    </div>
+    <div class="vehikal-datail-description">
+      <p>{{ motorBike.description }}</p>
+    </div>
+  </div>
+</div>

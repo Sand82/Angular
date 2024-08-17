@@ -22,7 +22,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   margin: 2.4rem auto;
   row-gap: 2.4rem;
-  column-gap: 4.8rem;
+  column-gap: 4rem;
 }
 
 .nav {
@@ -89,4 +89,59 @@ ul {
 .vehikal-link:hover,
 .vehikal-link:active {
   color: #cf711f;
+}
+
+.vehikal-datail-container {
+  margin: 2.4rem auto;
+  width: 70%;
+}
+
+.vehikal-datail-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2.4rem;
+  row-gap: 2.4rem;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  padding: 2.4rem;
+}
+
+.vehikal-datail-img {
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.vehikal-datail-img:hover {
+  transform: scaleY(1.05);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+}
+
+.vehikal-datail-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 2.4rem;
+
+  padding: 2.4 rem;
+  font-size: 1.8rem;
+}
+
+.vehikal-datail-info h2 {
+  font-size: 3.8rem;
+  letter-spacing: 0.4px;
+}
+
+.vehikal-datail-info p {
+  text-transform: uppercase;
+  color: #333;
+}
+
+.vehikal-datail-description {
+  grid-column: 1 / -1;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #777;
+  letter-spacing: 1.6;
 }
