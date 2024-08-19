@@ -53,6 +53,24 @@
       "year": 2023,
       "color": "Black",
       "description": "The 2023 Honda Accord is an All-New midsize sedan featuring a highly responsive 192-HP turbocharged engine and an available 204-HP hybrid powertrain for remarkable gas mileage and improved acceleration. The latest Accord is a solid choice for a family sedan. It's roomy, practical and easy to drive. It's also impressively fuel-efficient if you get the hybrid powertrain. But some of the Accord's newest tech and features are exclusively available on the top trim level, the Touring. Unless you're willing to shell out for a fully loaded model, the Accord just doesn't stand out in the class like it used to."
+    },
+    {
+      "id": 0.6571110850981867,
+      "imgUrl": "https://cms.groupeditors.com/img/autodealer/3846_1.jpg",
+      "brand": "Volkswagen",
+      "model": "Golf GT1",
+      "color": "Red",
+      "year": 2021,
+      "description": "The original Golf Mk1 was a front-engined, front-wheel drive replacement for the air-cooled, rear-engined, rear-wheel drive Volkswagen Beetle. Historically, the Golf is Volkswagen's best-selling model and is among the world's top three best-selling models, with more than 35 million units sold as of 2019.\nInitially, most Golfs were 3-door hatchbacks. Other variants include a 5-door hatchback, estate (Variant, from 1993), convertible (Cabriolet and Cabrio, 1979–2002, Cabriolet, 2011–present), and a Golf-based saloon, called the Jetta, Vento (from 1992) or Bora (from 1999). The Golf covers economy to high-performance market segments."
+    },
+    {
+      "id": 0.9439774808637571,
+      "brand": "BMW",
+      "imgUrl": "https://www.bmwusa.com/content/dam/bmw/common/limited-edition/2024/soc25/m4-cs/BMW-LimitedEdition-M4-CSL-all.jpg.bmwimg.small.jpg",
+      "model": "Limited edition",
+      "color": "Blue",
+      "year": 2023,
+      "description": "he 4 Series Coupe M models combine all the sporty style and prolific performance you’ve come to expect from BMW M. With horsepower ranging from 523 in the BMW M440i xDrive Coupe all the way up to 543 in the BMW M4 CS, these performance powerhouses deliver thrilling driving dynamics – both on the road and racetrack."
     }
   ],
   "motorbikes": [

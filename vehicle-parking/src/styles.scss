@@ -63,6 +63,7 @@ ul {
   background-size: 100%;
   transition: all 0.4s;
   margin-bottom: 2.4rem;
+  object-fit: cover;
 }
 
 .vehikal-img:hover {
@@ -73,7 +74,7 @@ ul {
   text-transform: uppercase;
   letter-spacing: 0.75px;
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 .vehikal-info {
@@ -109,6 +110,7 @@ ul {
 .vehikal-datail-img {
   width: 100%;
   overflow: hidden;
+  object-fit: cover;
   transition: all 0.4s;
 }
 

@@ -22,4 +22,15 @@ export class CarsService {
   getCar(id: number): Observable<Car> {
     return this.client.get<Car>(`${this.url}/${id}`);
   }
+
+  addData(car: Car) {
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    const response = fetch(this.url, {
+      method: 'POST',
+      body: JSON.stringify(car),
+      headers: headers,
+    });
+  }
 }

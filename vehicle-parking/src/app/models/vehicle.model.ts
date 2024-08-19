@@ -1,4 +1,4 @@
-export interface Vehikle {
+export interface Vehicle {
   id: number;
   imgUrl: string;
   brand: string;

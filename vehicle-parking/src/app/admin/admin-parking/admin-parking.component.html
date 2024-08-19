@@ -1,0 +1,82 @@
+<div class="form-container">
+  <div class="fields">
+    <div class="fields-title">Add vehicle</div>
+    <form
+      [formGroup]="form"
+      (ngSubmit)="onSubmit(form.value)"
+      class="formControl"
+    >
+      <div class="row">
+        <label for="brand">Brand</label>
+        <input formControlName="brand" type="text" name="brand" />
+        <p class="form-error" *ngIf="form.get('brand')!.hasError('pattern')">
+          "Brand is required."
+        </p>
+      </div>
+      <div class="row">
+        <label for="imgUrl">Image url</label>
+        <input formControlName="imgUrl" type="text" name="imgUrl" />
+        <p class="form-error" *ngIf="form.get('imgUrl')!.hasError('pattern')">
+          "Image is required."
+        </p>
+      </div>
+
+      <div class="row">
+        <label for="model">Model</label>
+        <input formControlName="model" type="text" name="model" />
+        <p class="form-error" *ngIf="form.get('model')!.hasError('pattern')">
+          "Model is required."
+        </p>
+      </div>
+
+      <div class="row">
+        <label class="description-label" for="model">Description</label>
+        <textarea
+          rows="4"
+          cols="50"
+          type="text"
+          name="comment"
+          formControlName="description"
+          name="description"
+        ></textarea>
+
+        <p
+          class="form-error"
+          *ngIf="form.get('description')!.hasError('pattern')"
+        >
+          "Description is required."
+        </p>
+      </div>
+
+      <div class="row">
+        <label for="color">Color</label>
+        <input formControlName="color" type="text" name="color" />
+        <p class="form-error" *ngIf="form.get('color')!.hasError('pattern')">
+          "Color is required."
+        </p>
+      </div>
+
+      <div class="row">
+        <label for="year">Year</label>
+        <input
+          formControlName="year"
+          type="number"
+          name="year"
+          data-error-message="Year must be in valid range and format."
+        />
+        <p class="form-error" *ngIf="form.get('year')!.hasError('pattern')">
+          "Year must be in valid range and format."
+        </p>
+      </div>
+
+      <div class="row">
+        <label for="type">Vehicle type</label>
+        <select class="form-select" name="type" id="vehicle">
+          <option value="car">Car</option>
+          <option value="motorBike">Motor bike</option>
+        </select>
+      </div>
+      <button class="btn" type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+  </div>
+</div>
