@@ -71,9 +71,9 @@
 
       <div class="row">
         <label for="type">Vehicle type</label>
-        <select class="form-select" name="type" id="vehicle">
-          <option value="car">Car</option>
-          <option value="motorBike">Motor bike</option>
+        <select class="form-select" name="type" formControlName="type">
+          <option [value]="'car'">Car</option>
+          <option [value]="'motorBike'">Motor bike</option>
         </select>
       </div>
       <button class="btn" type="submit" [disabled]="!form.valid">Submit</button>

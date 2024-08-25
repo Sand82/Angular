@@ -1,5 +1,5 @@
 .form-container {
-  width: 35%;
+  width: 27%;
   margin: 3.6rem auto;
   color: #333;
 }
@@ -35,15 +35,13 @@
 .row {
   display: grid;
   grid-template-columns: 2fr 3fr;
-  text-align: center;
 }
 
 .row label {
-  text-align: center;
   justify-self: right;
-  margin-right: 1.2rem;
+  margin-right: 2.4rem;
   align-self: center;
-  // letter-spacing: -0.5px;
+  letter-spacing: -0.5px;
 }
 
 .row .description-label {
@@ -69,16 +67,17 @@
   border: 1px solid #777;
 }
 
-p {
+.row p {
   width: 100%;
   height: 1.6rem;
   color: red;
 }
 
 .btn {
+  width: 40%;
   margin: 2rem;
   padding: 0.6rem 0;
-  text-align: center;
+  align-self: center;
   background-color: #eb984e;
   border-radius: 15px;
   font-size: 1.8rem;

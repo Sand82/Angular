@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Car } from '../../../models/car.model';
 import { CarsService } from '../../../services/cars.service';
@@ -8,11 +9,11 @@ import { CarsService } from '../../../services/cars.service';
   styleUrl: './cars.component.scss',
 })
 export class CarsComponent implements OnInit {
-  cars!: Car[];
+  cars$!: Observable<Car[]>;
 
   constructor(private carsService: CarsService) {}
 
   ngOnInit(): void {
-    this.carsService.getCars().subscribe((x) => (this.cars = x));
+    this.cars$ = this.carsService.getCars();
   }
 }

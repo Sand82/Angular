@@ -18,4 +18,15 @@ export class MotorbikeService {
   getMotorBike(id: number): Observable<MotorBike> {
     return this.client.get<MotorBike>(`${this.url}/${id}`);
   }
+
+  addData(motorBike: MotorBike) {
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    const response = fetch(this.url, {
+      method: 'POST',
+      body: JSON.stringify(motorBike),
+      headers: headers,
+    });
+  }
 }

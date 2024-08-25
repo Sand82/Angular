@@ -1,4 +1,7 @@
 <section class="container">
-  <app-motor-bike *ngFor="let motorBike of motorBikes" [motorBike]="motorBike">
+  <app-motor-bike
+    *ngFor="let motorBike of motorBikes$ | async"
+    [motorBike]="motorBike"
+  >
   </app-motor-bike>
 </section>

@@ -127,6 +127,15 @@
       "year": 2018,
       "color": "Black",
       "description": "The Yamaha YZF-R6 is a sport bike, produced by Yamaha as a 600 class from 1999 to 2020. From 2021, production availability is limited to race-only specification in most global markets, causing race organisers to realign their engine eligibility criteria to encourage other manufacturers having larger than 600 cc displacements to enter road-race competition from 2022. Race organisers wanted to provide scope for alternative machinery to move away from established tradition of the Yamaha R6 being the dominant marque in Supersport racing."
+    },
+    {
+      "id": 0.32912840802064913,
+      "brand": "Indian",
+      "imgUrl": "https://www.indianmoto.it/fileadmin/templates/model_24/nav-menu/intl/scout-1250/scout-bobber-limited-sunset.jpg",
+      "model": "Scout bobber",
+      "color": "Red",
+      "year": 2017,
+      "description": "The liquid-cooled, 1133cc, V-twin delivers punchy acceleration and the power to pass anyone, anywhere. Electronic fuel injection delivers class-leading horsepower and acceleration, while a responsive 6-speed transmission allows for sporty, aggressive riding."
     }
   ]
 }

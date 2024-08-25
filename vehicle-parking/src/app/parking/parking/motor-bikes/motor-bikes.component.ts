@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MotorBike } from '../../../models/motor-bike.model';
 import { MotorbikeService } from '../../../services/motorbike.service';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-motor-bikes',
@@ -8,13 +9,11 @@ import { MotorbikeService } from '../../../services/motorbike.service';
   styleUrl: './motor-bikes.component.scss',
 })
 export class MotorBikesComponent {
-  motorBikes!: MotorBike[];
+  motorBikes$!: Observable<MotorBike[]>;
 
   constructor(private motorBikeService: MotorbikeService) {}
 
   ngOnInit(): void {
-    this.motorBikeService
-      .getMotorBikes()
-      .subscribe((x) => (this.motorBikes = x));
+    this.motorBikes$ = this.motorBikeService.getMotorBikes();
   }
 }

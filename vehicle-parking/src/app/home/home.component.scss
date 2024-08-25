@@ -1,0 +1,28 @@
+.info-container {
+  margin: 4.8rem auto;
+  width: 70%;
+  text-align: center;
+}
+
+.info-container h1 {
+  font-size: 5rem;
+  padding: 2.4rem 0;
+}
+
+.info-container h2 {
+  font-size: 3rem;
+  padding: 2.4rem 0;
+  color: #333;
+}
+
+.info-container p {
+  font-size: 1.6rem;
+  padding: 2.4rem 0;
+  line-height: 1.6;
+  color: #777;
+}
+
+h1,
+h2 {
+  letter-spacing: 0.6px;
+}

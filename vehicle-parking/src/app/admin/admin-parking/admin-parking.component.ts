@@ -5,11 +5,14 @@ import {
   FormControl,
   Validators,
   ValidatorFn,
-  ValidationErrors,
+  FormBuilder,
 } from '@angular/forms';
-import { Vehicle } from '../../models/vehicle.model';
 import { Car } from '../../models/car.model';
 import { CarsService } from '../../services/cars.service';
+import { VehicleForm } from '../../models/vehicleForm.model';
+import { MotorbikeService } from '../../services/motorbike.service';
+import { MotorBike } from '../../models/motor-bike.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-parking',
@@ -19,27 +22,34 @@ import { CarsService } from '../../services/cars.service';
 export class AdminParkingComponent implements OnInit {
   form!: FormGroup;
 
-  constructor(private carService: CarsService) {}
+  constructor(
+    private carService: CarsService,
+    private motorBikeService: MotorbikeService,
+    private router: Router,
+    private formBuilder: FormBuilder
+  ) {}
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      brand: new FormControl('', Validators.required),
-      imgUrl: new FormControl('', Validators.required),
-      model: new FormControl('', Validators.required),
-      color: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required),
-      year: new FormControl(
+    this.form = this.formBuilder.group({
+      brand: this.formBuilder.control('', Validators.required),
+      imgUrl: this.formBuilder.control('', Validators.required),
+      model: this.formBuilder.control('', Validators.required),
+      color: this.formBuilder.control('', Validators.required),
+      description: this.formBuilder.control('', Validators.required),
+      year: this.formBuilder.control(
         '',
         Validators.compose([
           CustomValidators.yearValidator as ValidatorFn,
           Validators.required,
         ])
       ),
-      type: new FormControl('car'),
+      type: this.formBuilder.control('car'),
     });
   }
 
-  onSubmit(vehicle: any) {
+  onSubmit(vehicle: VehicleForm) {
+    console.log(vehicle.type);
+
     if (vehicle.type.toLowerCase() === 'car') {
       const data: Car = {
         id: Math.random(),
@@ -52,6 +62,24 @@ export class AdminParkingComponent implements OnInit {
       };
 
       this.carService.addData(data);
+
+      this.router.navigate(['/parking/cars']);
+    }
+
+    if (vehicle.type.toLowerCase() === 'motorbike') {
+      const data: MotorBike = {
+        id: Math.random(),
+        brand: vehicle.brand,
+        imgUrl: vehicle.imgUrl,
+        model: vehicle.model,
+        color: vehicle.color,
+        year: vehicle.year,
+        description: vehicle.description,
+      };
+
+      this.motorBikeService.addData(data);
+
+      this.router.navigate(['/parking/motor-bikes']);
     }
   }
 }
