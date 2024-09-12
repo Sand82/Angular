@@ -92,16 +92,22 @@
           <div class="col-1-of-2">
             <div class="composition">
               <img
-                src="img/nat-1-large.jpg"
+                srcset="img/nat-1-large.jpg 300w, img/nat-1-large 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                 alt="Photo 1"
                 class="composition__photo composition__photo--p1"
+                src="img/nat-1-large.jpg"
               />
               <img
+                srcset="img/nat-2-large.jpg 300w, img/nat-2-large 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                 src="img/nat-2-large.jpg"
                 alt="Photo 2"
                 class="composition__photo composition__photo--p2"
               />
               <img
+                srcset="img/nat-3-large.jpg 300w, img/nat-3-large 1000w"
+                sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                 src="img/nat-3-large.jpg"
                 alt="Photo 3"
                 class="composition__photo composition__photo--p3"
@@ -197,7 +203,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$297</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book now!</a>
+                  <a href="#popup" class="btn btn--white">Book now!</a>
                 </div>
               </div>
             </div>
@@ -227,7 +233,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$497</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book now!</a>
+                  <a href="#popup" class="btn btn--white">Book now!</a>
                 </div>
               </div>
             </div>
@@ -257,7 +263,7 @@
                     <p class="card__price-only">Only</p>
                     <p class="card__price-value">$897</p>
                   </div>
-                  <a href="#" class="btn btn--white">Book now!</a>
+                  <a href="#popup" class="btn btn--white">Book now!</a>
                 </div>
               </div>
             </div>
@@ -403,7 +409,21 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <img src="img/logo-green-2x.png" alt="Full logo" class="footer__logo" />
+        <picture class="footer__logo">
+          <source
+            srcset="
+              img/logo-green-small-1x.png 1x,
+              img/logo-green-small-2x.png 2x
+            "
+            media="(max-width :37.5em)"
+          />
+          <img
+            src="img/logo-green-2x.png"
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            alt="Full logo"
+            class="footer__logo"
+          />
+        </picture>
       </div>
       <div class="row">
         <div class="col-1-of-2">
@@ -436,6 +456,50 @@
         </div>
       </div>
     </footer>
+
+    <div class="popup" id="popup">
+      <div class="popup__content">
+        <div class="popup__left">
+          <img src="img/nat-8.jpg" alt="Tour photo" class="popup__img" />
+          <img src="img/nat-9.jpg" alt="Tour photo" class="popup__img" />
+        </div>
+        <div class="popup__right">
+          <a href="#section-tours" class="popup__close">&times;</a>
+          <h2 class="heading-secondary u-margin-bottom-small">
+            Start booking now
+          </h2>
+          <h3 class="heading-tertiary u-margin-bottom-small">
+            Important &ndash; Please read these terms befor booking
+          </h3>
+          <p class="popup__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+            mollitia, molestiae quas vel sint commodi repudiandae consequuntur
+            voluptatum laborum numquam blanditiis harum quisquam eius sed odit
+            fugiat iusto fuga praesentium optio, eaque rerum! Provident
+            similique accusantium nemo autem. Veritatis obcaecati tenetur iure
+            eius earum ut molestias architecto voluptate aliquam nihil, eveniet
+            aliquid culpa officia aut! Impedit sit sunt quaerat, odit, tenetur
+            error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
+            quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias
+            eos sapiente officiis modi at sunt excepturi expedita sint? Sed
+            quibusdam recusandae alias error harum maxime adipisci amet laborum.
+            Perspiciatis minima nesciunt dolorem! Officiis iure rerum voluptates
+            a cumque velit quibusdam sed amet tempora. Sit laborum ab, eius
+            fugit doloribus tenetur fugiat, temporibus enim commodi iusto libero
+            magni deleniti quod quam consequuntur! Commodi minima excepturi
+            repudiandae velit hic maxime doloremque. Quaerat provident commodi
+            consectetur veniam similique ad earum omnis ipsum saepe, voluptas,
+            hic voluptates pariatur est explicabo fugiat, dolorum eligendi quam
+            cupiditate excepturi mollitia maiores labore suscipit quas? Nulla,
+            placeat. Voluptatem quaerat non architecto ab laudantium modi minima
+            sunt esse temporibus sint culpa, recusandae aliquam numquam totam
+            ratione voluptas quod exercitationem fuga. Possimus quis earum
+            veniam quasi aliquam eligendi, placeat qui corporis!
+          </p>
+          <a href="" class="btn btn--green">Book now</a>
+        </div>
+      </div>
+    </div>
 
     <!-- <section class="grid-test">
       <div class="row">
