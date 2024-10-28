@@ -1,0 +1,25 @@
+.btn {
+    padding: 5px 15px;    
+    border-radius: 10px;
+    color: #fff;
+    &:hover {        
+        opacity: 0.7;
+    }
+}
+
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.grey {
+    background-color: grey;
+}
+
+.green {
+    background-color: green;
+}
