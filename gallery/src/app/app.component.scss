@@ -1,0 +1,17 @@
+.container {
+    width: 110rem;
+    margin: 5rem auto;    
+}
+
+.main-img {
+    margin: 2rem;
+}
+
+.main-gallery {
+    display: grid;    
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(3, 10vw);   
+    padding: 2.5rem;
+    background-color: #1111;
+    gap: 2.5rem;
+}

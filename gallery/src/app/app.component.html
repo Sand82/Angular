@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="main-img">
+        <app-image [offer]="offer" [styleClass]="'mainImg'"></app-image>
+    </div>
+    <p>{{dataEvent}}</p>
+    <div class="main-gallery">
+        <div *ngFor="let offer of offers" class="gallery-item">
+            <app-image [offer]="offer" [styleClass]="'galleryImg'" (valueFromChild)="changePhoto($event)"></app-image>
+        </div>
+    </div>
+</div>
