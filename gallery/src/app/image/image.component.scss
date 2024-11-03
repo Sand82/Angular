@@ -1,15 +1,22 @@
 
 .img {
-    object-fit: cover;
-    width: 100%;
+    object-fit: cover; 
+    transition: all .3s;
+    overflow: hidden;  
+    
+    &:hover {
+        transform: scale(1.01);
+        box-shadow: 0 1.5rem 3rem rgba(black, 0.3);       
+    }
 }
 
-.mainImg {    
-    height: 80vh;
+.mainImg {  
+    width: 100%;   
+    height: 60vh;       
 }
 
 .galleryImg {
     width: 100%;
     height: 100%;    
-    display: block;
+    display: block;    
 }

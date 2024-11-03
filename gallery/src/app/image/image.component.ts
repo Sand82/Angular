@@ -14,12 +14,12 @@ export class ImageComponent {
   offer! : Offer;
 
   @Input()
-  styleClass! : string;
- 
-  @Output()
-  changePhoto = new EventEmitter<string>();
+  styleClass! : string; 
+  
+  @Output() 
+  newItemEvent = new EventEmitter<string>();
 
-  changeImage(id: number) {
-    this.changePhoto.emit(id.toString());
+  changeImage(id: string) {
+    this.newItemEvent.emit(id);
   }
 }

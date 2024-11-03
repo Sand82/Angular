@@ -1,5 +1,5 @@
 export interface Offer {
-   id : number;
+   id : string;
    name : string;
    city : string;
    state: string;

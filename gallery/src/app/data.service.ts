@@ -14,5 +14,4 @@ export class DataService {
   getData(): Observable<Offer[]> {
     return this.http.get<Offer[]>(this.url);
   }
-
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { DataService } from './data.service';
 import { Offer } from './offer.model';
@@ -18,17 +18,21 @@ export class AppComponent implements OnInit {
   offer!: Offer;
   dataEvent : any;  
 
-  constructor(private data: DataService){}
+  constructor(private data: DataService){}  
 
   ngOnInit(): void {
     this.data.getData().subscribe(data => 
       {
-        this.offers = data.slice(1);
+        this.offers = data;
         this.offer = data[0];
       });
   }
 
-  changePhoto($event: Event){
-    console.log($event);
+  changeImage(offerId: string) {        
+    let currentOffer = this.offers.find(x => x.id === offerId);
+        
+    if (currentOffer) {
+      this.offer = currentOffer;
+    }
   }
 }
