@@ -3,6 +3,7 @@
     object-fit: cover; 
     transition: all .3s;
     overflow: hidden;  
+    border-radius: 5px;
     
     &:hover {
         transform: scale(1.01);
