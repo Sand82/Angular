@@ -2,6 +2,10 @@
     <div class="main-img">
         <app-image [offer]="offer" [styleClass]="'mainImg'"></app-image>
     </div>
+    <div class="main-button">
+        <app-button [name]="'Add New Deal'" [style]="'grey'" (OnClick)="
+        expendModal($event)"></app-button>
+    </div>
     <p>{{dataEvent}}</p>
     <div class="main-gallery">
         <div *ngFor="let offer of offers; let i = index" class="gallery-item gallery-item-{{i + 1}}">

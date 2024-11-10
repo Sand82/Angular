@@ -1,11 +1,17 @@
 .container {
     width: 110rem;
-    margin: 5rem auto;    
+    margin: 5rem auto; 
+    display: flex;
+    flex-direction: column;   
 }
 
 .main-img {
     width: 100%;
     margin-bottom: 3rem;    
+}
+
+.main-button {
+    align-self: center;
 }
 
 .main-gallery {

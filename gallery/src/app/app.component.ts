@@ -4,11 +4,12 @@ import { DataService } from './data.service';
 import { Offer } from './offer.model';
 import { ImageComponent } from './image/image.component';
 import { CommonModule } from '@angular/common';
+import { ButtonComponent } from './button/button.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ImageComponent, CommonModule ],
+  imports: [RouterOutlet, ImageComponent, CommonModule, ButtonComponent ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -34,5 +35,9 @@ export class AppComponent implements OnInit {
     if (currentOffer) {
       this.offer = currentOffer;
     }
+  }
+  
+  expendModal(event : string) {
+    
   }
 }

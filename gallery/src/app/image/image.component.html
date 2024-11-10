@@ -1,1 +1,2 @@
-<img *ngIf="offer" class="img" [src]="offer.photo" alt="houses" [ngClass]="styleClass" (click)="changeImage(offer.id)">
+<img *ngIf="offer" class="img" [src]="offer.photo" alt="houses" [ngClass]="styleClass"
+    (EmitCurrentEvent)="changeImage(offer.id)">
