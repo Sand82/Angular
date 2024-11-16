@@ -1,15 +1,12 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
-  standalone: true,
-  imports: [CommonModule, FormGroup, FormBuilder],
   templateUrl: './form.component.html',
   styleUrl: './form.component.scss'
 })
-export class FormComponent implements OnInit {
+export class FormComponent {
   form! : FormGroup;
 
   constructor(private fb : FormBuilder){}
@@ -22,4 +19,8 @@ export class FormComponent implements OnInit {
       password: ''
     })
   }  
+
+  submitForm() : void {
+    console.log(this.form.value)
+  }
 }

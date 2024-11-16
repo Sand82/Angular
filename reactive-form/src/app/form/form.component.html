@@ -1,6 +1,6 @@
 <div class="container">
     <h1 class="user-registration">User registration</h1>
-    <form [formGroup]="form" class="form" action="submit">
+    <form [formGroup]="form" class="form" (ngSubmit)="submitForm()">
         <div class="form-group form-item">
             <label class="form-item-label" for="firstName">First name</label>
             <input type="text" class="form-control" formControlName="firstName">
@@ -17,8 +17,8 @@
 
         <div class="form-group form-item">
             <label class="form-item-label" for="password">Password</label>
-            <input type="text" class="form-control" formControlName="password">
+            <input type="password" class="form-control" formControlName="password">
         </div>
+        <button class="button" type="submit">Submit</button>
     </form>
-    <button class="button" type="submit">Submit</button>
 </div>
