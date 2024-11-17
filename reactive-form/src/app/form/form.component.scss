@@ -35,6 +35,12 @@
             line-height: 1.6;
             color: #555;            
         }
+
+        &-error {
+            color: red;
+            font-size: 10px;
+            font-weight: 600;
+        }
     }
 }
 
@@ -53,6 +59,10 @@
 
     &:hover {
         background-color: rgb(250, 128, 114, 0.7); 
+    }
+
+    &:disabled {
+        background-color: #999;
     }
 }
 
