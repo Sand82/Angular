@@ -1,0 +1,13 @@
+<div [style.display]="isToggled ? 'block' : 'none'">
+    <div class="modal">
+        <section class="modal-content">
+            <!--  Content will be projected here    -->
+            Hello from modal!!!!
+
+        </section>
+        <div class="modal-overlay" (click)="toggleModal()"></div>
+    </div>
+
+</div>
+
+<button class="btn" (click)="toggleModal()">Open modal</button>
