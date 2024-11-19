@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import {Option} from './option.module'
 
-let oprionsArr : Option[] = [
+let optionsArr : Option[] = [
   {
     title : 'Option 1',
     id : 1
@@ -31,10 +31,10 @@ let oprionsArr : Option[] = [
 })
 
 export class AppComponent {
-  title = 'dropdown';
-  selectedValue!: number;
-  options: Option[] = oprionsArr;
 
+  title = 'dropdown';
+  selectedValue : number = optionsArr[0].id;
+  options: Option[] = optionsArr; 
 
   @ViewChild('dropdown', {static: false}) dropdown? : ElementRef
 
