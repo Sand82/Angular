@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { createHttpObservable } from "../common/util";
-import { map } from "rxjs/operators";
+import { concat, of } from "rxjs";
 
 @Component({
   selector: "about",
@@ -10,14 +9,32 @@ import { map } from "rxjs/operators";
 export class AboutComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {
-    const http$ = createHttpObservable("api/courses");
-
-    const courses$ = http$.pipe(map((res) => Object.values(res["payload"])));
-
-    courses$.subscribe((res) => console.log(res));
-  }
+  ngOnInit(): void {}
 }
+
+////////////////////////////
+//OPSERVABLES CONCATENATION
+///////////////////////////
+
+// ngOnInit(): void {
+//   const sourse1$ = of(1, 2, 3);
+//   const sourse2$ = of(4, 5, 6);
+//   const sourse3$ = of(7, 8, 9);
+
+//   const result$ = concat(sourse1$, sourse2$, sourse3$);
+
+//   result$.subscribe((res) => console.log(res));
+// }
+
+////////////////////////
+//INTRODUCE PIPE AND MAP
+///////////////////////
+
+// ngOnInit(): void {
+//   const http$ = createHttpObservable("api/courses");
+//   const courses$ = http$.pipe(map((res) => Object.values(res["payload"])));
+//   courses$.subscribe((res) => console.log(res));
+// }
 
 ///////////////////
 //CUSTOM OBSERVABLE
