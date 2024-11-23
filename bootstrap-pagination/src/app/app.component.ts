@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Offer } from './offer.model';
-import { AppService } from './app.service';
-import { Observable } from 'rxjs';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +6,7 @@ import { Observable } from 'rxjs';
   styleUrl: './app.component.scss'
 })
 
-export class AppComponent implements OnInit {  
-  title = 'bootstrap-pagination';
-  offers!: Observable<Offer[]>
-
-  constructor(private data: AppService){}
-
-  ngOnInit(): void {
-    this.offers = this.data.getData();
-    this.offers.subscribe(data => console.log(data));
-  }
+export class AppComponent {  
+  title = 'bootstrap-pagination';  
 }
 
