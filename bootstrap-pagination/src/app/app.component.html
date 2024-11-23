@@ -1,1 +1,15 @@
-<button type="button" class="btn btn-outline-primary">Primary</button>
+<div class="container">
+    <div class="row gy-4">
+        <h2 class="col-12">All Offers</h2>
+        <div class="col-6" *ngFor="let offer of offers | async">
+            <div class="card">
+                <img class="card-img-top card-img" [src]="offer.photo" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{offer.name}}</h5>
+                    <p class="card-text">{{offer.city }} {{offer.state}}</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
