@@ -1,5 +1,6 @@
 import { Observable } from "rxjs";
 import { Course } from "../model/course";
+import { response } from "express";
 
 export function createHttpObservable(url: string): Observable<any> {
   return new Observable((observer) => {
@@ -8,7 +9,11 @@ export function createHttpObservable(url: string): Observable<any> {
 
     fetch(url, { signal })
       .then((res) => {
-        return res.json();
+        if (res.ok) {
+          return res.json();
+        } else {
+          observer.error("Request failed with status code: " + res.status);
+        }
       })
       .then((body) => {
         observer.next(body);
