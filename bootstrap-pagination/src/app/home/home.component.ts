@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Offer } from '../offer.model';
 import { AppService } from '../app.service';
+import { Offer } from '../offer.model';
 
 @Component({
-  selector: 'app-pagination',
-  templateUrl: './pagination.component.html',
-  styleUrl: './pagination.component.scss'
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
 })
-export class PaginationComponent implements OnInit {
-  offers!: Offer[]
+export class HomeComponent implements OnInit {
+  offers! : Offer[];
   page = 1;
-  pageSize = 6;
+  pageSize = 6; 
 
   constructor(private data: AppService){}
 

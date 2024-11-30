@@ -7,7 +7,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{offer.name}}</h5>
                     <p class="card-text">{{offer.city }} {{offer.state}}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a [routerLink]="['/offer-details', offer.id]" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         </div>
