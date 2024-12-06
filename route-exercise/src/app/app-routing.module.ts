@@ -9,6 +9,7 @@ import {
 } from "@angular/router";
 import { AboutComponent } from "./about/about.component";
 import { HomeComponent } from "./courses/home/home.component";
+import { CanLoadAuthGuard } from "./services/can-load-outh.guard";
 
 const routes: Routes = [
   {
@@ -20,6 +21,7 @@ const routes: Routes = [
     path: "courses",
     loadChildren: () =>
       import("./courses/courses.module").then((m) => m.CoursesModule),
+    canLoad: [CanLoadAuthGuard],
   },
   {
     path: "login",
@@ -38,6 +40,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [],
+  providers: [CanLoadAuthGuard],
 })
 export class AppRoutingModule {}
