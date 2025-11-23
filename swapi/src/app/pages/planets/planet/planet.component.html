@@ -1,0 +1,26 @@
+<div class="planet-card" *ngIf="planet">
+    <div class="planet-card__title">{{ planet.name }}</div>
+    <div class="planet-card__row">
+        <span class="planet-card__label">Diameter:</span>
+        <span class="planet-card__value">{{ planet.diameter }}</span>
+    </div>
+    <div class="planet-card__row">
+        <span class="planet-card__label">Climate:</span>
+        <span class="planet-card__value">{{ planet.climate }}</span>
+    </div>
+    <div class="planet-card__row">
+        <span class="planet-card__label">Gravity:</span>
+        <span class="planet-card__value">{{ planet.gravity }}</span>
+    </div>
+    <div class="planet-card__row">
+        <span class="planet-card__label">Terrain:</span>
+        <span class="planet-card__value">{{ planet.terrain }}</span>
+    </div>    
+    <div class="planet-card__row">
+        <span class="planet-card__label">Population:</span>
+        <span class="planet-card__value">{{ planet.population }}</span>
+    </div>
+</div>
+<div *ngIf="!planet" class="planet-card">
+    <div class="planet-card__title">No planet data available.</div>
+</div>

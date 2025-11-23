@@ -1,1 +1,3 @@
-<p>planets works!</p>
+<div class="planet-container">
+    <app-planet *ngFor="let planet of planets$ | async" [planet]="planet"></app-planet>
+</div>
