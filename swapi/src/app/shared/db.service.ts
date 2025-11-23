@@ -4,6 +4,7 @@ import { inject, Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class DbService {
   private readonly client = inject(HttpClient);
 

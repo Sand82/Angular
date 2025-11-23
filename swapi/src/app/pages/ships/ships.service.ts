@@ -1,17 +1,21 @@
 import { inject, Injectable } from '@angular/core';
 import { shipsUrl } from '../../constants/endPoints';
 import { DbService } from '../../shared/db.service';
-import { StarShip } from '../../models/starShip';
-import { Observable } from 'rxjs';
+import { StarShip, StarShipResponce } from '../../models/starShip';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ShipsService {
 
   private readonly dbService = inject(DbService);
 
-  getShips() {
-    return this.dbService.getItems<Observable<StarShip[]>>(shipsUrl);
+  getShips() : Observable<StarShip[]> {
+    return this.dbService.getItems<StarShipResponce>(shipsUrl)
+    .pipe(
+      map((shipResponse) => shipResponse.results)
+    );
   }
 }

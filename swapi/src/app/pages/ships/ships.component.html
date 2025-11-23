@@ -1,1 +1,3 @@
-<p>ships works!</p>
+<div class="ship-container">
+    <app-ship *ngFor="let ship of ships$ | async" [ship]="ship"></app-ship>
+</div>

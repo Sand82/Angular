@@ -1,3 +1,10 @@
+export interface StarShipResponce {
+    count: number;
+    next: string;
+    previous: string;
+    results: StarShip[];
+}
+
 export interface StarShip {
    name: string;
    model: string;
