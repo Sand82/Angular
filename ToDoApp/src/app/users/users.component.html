@@ -10,10 +10,10 @@
 
     @if (selectedUser) {
     <section class="user-details">
-        <h2>User Details</h2>
-        <!-- <app-user-details [user]="selectedUser"></app-user-details>
-            -->
-        {{selectedUser.id}} - {{selectedUser.name}} -
+        <h2>{{ selectedUser.name }}</h2>
+        @for (task of userTasks; track task.id) {
+        <app-task [task]="task"></app-task>
+        }
     </section>
     }@else {
     <p class="no-user-selected">Please select a user to see details.</p>
