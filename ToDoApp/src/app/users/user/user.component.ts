@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from '../../models/User';
 import { CommonModule } from '@angular/common';
 
@@ -11,4 +11,11 @@ import { CommonModule } from '@angular/common';
 })
 export class UserComponent {
   @Input() user!: User;
+  @Output() selected = new EventEmitter<User>();
+
+  onSelect() : void {    
+    this.selected.emit(this.user);
+  }
 }
+
+ 

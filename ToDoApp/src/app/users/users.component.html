@@ -1,8 +1,21 @@
-<section class="users">
-    <h2>Users</h2>
-    <ul>
-        @for (user of users; track user.id) {
-        <app-user [user]="user"></app-user>
-        }
-    </ul>
+<section class="container">
+    <section class="users">
+        <h2>Users</h2>
+        <ul>
+            @for (user of users; track user.id) {
+            <app-user [user]="user" (selected)="onUserSelected($event)"></app-user>
+            }
+        </ul>
+    </section>
+
+    @if (selectedUser) {
+    <section class="user-details">
+        <h2>User Details</h2>
+        <!-- <app-user-details [user]="selectedUser"></app-user-details>
+            -->
+        {{selectedUser.id}} - {{selectedUser.name}} -
+    </section>
+    }@else {
+    <p class="no-user-selected">Please select a user to see details.</p>
+    }
 </section>
