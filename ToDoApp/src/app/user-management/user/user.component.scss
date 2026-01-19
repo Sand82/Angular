@@ -16,6 +16,11 @@
     transform: translateY(-2px);
 }
 
+.active-user {
+    background-color: #cfe2ff;
+    border-left: 4px solid #4285f4;
+}
+
 .user div:first-child {
     flex-shrink: 0;
 }

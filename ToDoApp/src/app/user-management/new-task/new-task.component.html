@@ -1,0 +1,27 @@
+<div class="modal-backdrop" (click)="onClose()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+            <h2>Add New Task</h2>
+            <button class="close-btn" (click)="onClose()">&times;</button>
+        </div>
+
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="title">Task Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter task title" [(ngModel)]="taskTitle"
+                    required class="form-input" />
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" placeholder="Enter task description"
+                    [(ngModel)]="taskDescription" rows="5" class="form-input"></textarea>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn-cancel" (click)="onClose()">Cancel</button>
+                <button type="submit" class="btn-submit">Add Task</button>
+            </div>
+        </form>
+    </div>
+</div>

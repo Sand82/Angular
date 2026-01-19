@@ -10,12 +10,20 @@
 
     @if (selectedUser) {
     <section class="user-details">
-        <h2>{{ selectedUser.name }}</h2>
+        <div>
+            <h2>{{ selectedUser.name }}</h2>
+            <button (click)="onOpenModal()">Add Task</button>
+        </div>
         @for (task of userTasks; track task.id) {
-        <app-task [task]="task"></app-task>
+        <app-task [task]="task" (taskCompleted)="onTaskCompleted($event)"></app-task>
         }
     </section>
     }@else {
     <p class="no-user-selected">Please select a user to see details.</p>
     }
 </section>
+
+@if (openAddTaskModal && selectedUser) {
+<app-new-task [userId]="selectedUser.id" (closeModal)="onCloseModal($event)" (taskCreated)="onTaskCreated($event)">
+</app-new-task>
+}
