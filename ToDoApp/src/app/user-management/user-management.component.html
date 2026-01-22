@@ -1,9 +1,10 @@
 <section class="container">
-    <section class="users">
+    <section class="users" [class.highlight]="selectedUser">
         <h2>Users</h2>
         <ul>
             @for (user of users; track user.id) {
-            <app-user [user]="user" (selected)="onUserSelected($event)"></app-user>
+            <app-user [user]="user" [isActive]="selectedUser?.id === user.id"
+                (selected)="onUserSelected($event)"></app-user>
             }
         </ul>
     </section>
@@ -15,7 +16,7 @@
             <button (click)="onOpenModal()">Add Task</button>
         </div>
         @for (task of userTasks; track task.id) {
-        <app-task [task]="task" (taskCompleted)="onTaskCompleted($event)"></app-task>
+        <app-task [task]="task"></app-task>
         }
     </section>
     }@else {
@@ -24,6 +25,6 @@
 </section>
 
 @if (openAddTaskModal && selectedUser) {
-<app-new-task [userId]="selectedUser.id" (closeModal)="onCloseModal($event)" (taskCreated)="onTaskCreated($event)">
+<app-new-task [userId]="selectedUser.id">
 </app-new-task>
 }

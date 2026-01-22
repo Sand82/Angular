@@ -16,9 +16,11 @@
     transform: translateY(-2px);
 }
 
-.active-user {
+.is-active {
     background-color: #cfe2ff;
     border-left: 4px solid #4285f4;
+    box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+    transform: translateY(-2px);
 }
 
 .user div:first-child {

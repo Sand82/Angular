@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class UserComponent {
   @Input() user!: User;
+  @Input() isActive: boolean = false;
   @Output() selected = new EventEmitter<User>(); 
 
   onSelect() : void {    

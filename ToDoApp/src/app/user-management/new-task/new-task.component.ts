@@ -1,8 +1,9 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { Task } from '../../models/Tasks';
 import { Guid } from 'guid-typescript';
+import { UserManagementService } from '../user-management.service';
 
 @Component({
   selector: 'app-new-task',
@@ -12,14 +13,18 @@ import { Guid } from 'guid-typescript';
   styleUrl: './new-task.component.scss'
 })
 export class NewTaskComponent {
-  @Input() userId!: string;
-  @Output() closeModal = new EventEmitter<boolean>();
-  @Output() taskCreated = new EventEmitter<Task>();
+  @Input() userId!: string;  
   taskTitle: string = '';
   taskDescription: string = '';
 
-  onClose() {    
-    this.closeModal.emit(false);    
+  private readonly userManagementService = inject(UserManagementService);
+
+  get closeModal() {    
+    return this.userManagementService.isNewTaskModalOpen;
+  }
+
+  onClose() {
+    this.userManagementService.onCloseModal();
   }
 
   onSubmit() {
@@ -30,7 +35,6 @@ export class NewTaskComponent {
       description: this.taskDescription,
       userId: this.userId
     };
-    this.taskCreated.emit(newTask);
-    this.closeModal.emit(false);
+    this.userManagementService.createdTask(newTask);    
   }
 }

@@ -1,4 +1,4 @@
-<li class="user" (click)="onSelect()">
+<li class="user" [class.is-active]="isActive" (click)="onSelect()">
     <div>
         <img [src]="'pictures/'+ user.picture" alt="user picture" />
     </div>

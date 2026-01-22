@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { Task } from '../../models/Tasks';
+import { UserManagementService } from '../user-management.service';
 
 @Component({
   selector: 'app-task',
@@ -10,9 +11,9 @@ import { Task } from '../../models/Tasks';
 })
 export class TaskComponent {
   @Input() task! : Task;
-  @Output() taskCompleted = new EventEmitter<string>();
+   private readonly userManagementService = inject(UserManagementService);
 
   onTaskCompleted(): void {
-    this.taskCompleted.emit(this.task.id);
+    this.userManagementService.removeTask(this.task.id);
   }
 }
