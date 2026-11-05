@@ -1,0 +1,32 @@
+.user-container {
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.male-color {
+  color: blue;
+}
+
+.female-color {
+  color: pink;
+}
+
+button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  height: auto;
+  border-radius: 10px;
+}

@@ -1,0 +1,8 @@
+<div class="tasks-container">
+    <h2>Tasks</h2>
+    <ul>
+        @for (task of tasks$ | async; track task.id) {
+        <app-task [task]="task"></app-task>
+        }
+    </ul>
+</div>

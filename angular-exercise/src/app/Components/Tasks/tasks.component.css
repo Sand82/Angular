@@ -1,0 +1,10 @@
+.tasks-container {
+  max-width: 600px;
+  margin: 0 auto;
+  align-items: center;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+}

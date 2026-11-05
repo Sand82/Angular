@@ -1,0 +1,11 @@
+<div class="user-container">
+    <img [src]="userData?.gender === 'male' ? maleImageLink : femaleImageLink" alt="User Image">
+    <h2 [ngClass]="{
+        'male-color': userData?.gender === 'male',
+        'female-color': userData?.gender !== 'male'
+      }">
+        Welcome, {{ userData?.userName }}!
+    </h2>
+    <p>Age: {{ userData?.age }}</p>
+    <button (click)="setAge()">Set Age to 30</button>
+</div>

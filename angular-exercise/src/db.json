@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "userName": "Sand",
+      "age": 45,
+      "gender": "male"
+    },
+    {
+      "id": 2,
+      "userName": "Mim",
+      "age": 40,
+      "gender": "female"
+    },
+    {
+      "id": 3,
+      "userName": "Mish",
+      "age": 11,
+      "gender": "male"
+    },
+    {
+      "id": 4,
+      "userName": "Lub",
+      "age": 6,
+      "gender": "male"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Learn Angular",
+      "description": "Practice Angular components",
+      "completed": false,
+      "priority": "high"
+    },
+    {
+      "id": "2",
+      "title": "Learn RxJS",
+      "description": "Practice RxJS operators",
+      "completed": false,
+      "priority": "medium"
+    },
+    {
+      "id": "3",
+      "title": "Build an application",
+      "description": "Create an Angular project",
+      "completed": true,
+      "priority": "low"
+    }
+  ]
+}
