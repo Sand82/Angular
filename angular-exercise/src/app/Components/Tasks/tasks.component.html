@@ -1,7 +1,24 @@
+<div class="filter-container">
+    <div class="filter-item">
+        <label for="task">Filter by Task:</label>
+        <select id="task" [(ngModel)]="taskFilter" (ngModelChange)="onTaskFilterChange($event)">
+            <option value="">All</option>
+            <option value="completed">Completed</option>
+            <option value="not completed">Not Completed</option>
+        </select>
+    </div>
+    <div class="filter-item">
+        <label for="title">Filter by Title:</label>
+        <input type="text" id="title" [(ngModel)]="titleFilter" (ngModelChange)="onTitleFilterChange($event)"
+            placeholder="Search tasks...">
+    </div>
+</div>
+
+
 <div class="tasks-container">
     <h2>Tasks</h2>
     <ul>
-        @for (task of tasks$ | async; track task.id) {
+        @for (task of filteredTasks$ | async; track task.id) {
         <app-task [task]="task"></app-task>
         }
     </ul>
