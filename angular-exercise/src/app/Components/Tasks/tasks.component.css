@@ -1,3 +1,19 @@
+.filter-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-item {
+  padding: 5px;
+  label,
+  input,
+  select {
+    width: 200px;
+    display: block;
+    height: 1.5rem;
+  }
+}
+
 .tasks-container {
   max-width: 600px;
   margin: 0 auto;

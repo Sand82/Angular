@@ -1,8 +1,10 @@
-body {
-  cursor: url('/cursor.cur') 5 2, auto;
+* {
+ box-sizing: border-box; 
 }
 
 html {
   margin: 0 auto;
   max-width: 600px;
+  box-sizing: border-box;
+  // font-size: 62.5%;
 }
