@@ -1,11 +1,15 @@
 <div class="user-container">
     <img [src]="userData?.gender === 'male' ? maleImageLink : femaleImageLink" alt="User Image">
-    <h2 [ngClass]="{
+    <h3 [ngClass]="{
         'male-color': userData?.gender === 'male',
         'female-color': userData?.gender !== 'male'
       }">
-        Welcome, {{ userData?.userName }}!
-    </h2>
+        Welcome, {{ userData?.userName }}
+    </h3>
     <p>Age: {{ userData?.age }}</p>
-    <button (click)="setAge()">Set Age to 30</button>
+    <div class="user-button">
+        <button class="btn btn-red" type="button" (click)="deleteUserHandler($event)">Delete</button>
+        <a class="btn btn-green" type="button" [routerLink]="['/users/manage', userData?.id]">Edit</a>
+    </div>
+    
 </div>

@@ -1,0 +1,32 @@
+.add-form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 1.5rem 0;
+
+  .form-control {
+    display: flex;
+    flex-direction: column;
+    max-width: 15rem;
+    grid-column-start: 2;
+    row-gap: 0.8rem;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+
+      .form-label {
+        font-weight: 500;
+        padding: 4px;
+      }
+
+      .form-input, .form-select {
+        height: 1.5rem;
+        border-radius: 5px;
+      }
+
+      .form-select {
+        cursor: pointer;
+      }
+    }
+  }
+}

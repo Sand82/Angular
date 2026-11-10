@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { TasksComponent } from './Components/Tasks/tasks.component';
 import { UsersComponent } from './Components/Users/users.component';
 import { HomeComponent } from './Pages/home.component';
-import { AddUserComponent } from './Components/Users/Add/add-user.component';
+import { ManageUserComponent } from './Components/Users/Manage/manage-user.component';
 
 export const routes: Routes = [
   {
@@ -18,7 +18,11 @@ export const routes: Routes = [
     component: UsersComponent,
   },
   {
-    path: 'users/add',
-    component: AddUserComponent,
+    path: 'users/manage',
+    component: ManageUserComponent,
+  },
+  {
+    path: 'users/manage/:userId',
+    component: ManageUserComponent,
   },
 ];

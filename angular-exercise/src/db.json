@@ -1,28 +1,28 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "userName": "Sand",
       "age": 45,
       "gender": "male"
     },
     {
-      "id": 2,
+      "id": "2",
       "userName": "Mim",
       "age": 40,
       "gender": "female"
     },
     {
-      "id": 3,
+      "id": "3",
       "userName": "Mish",
       "age": 11,
       "gender": "male"
     },
     {
-      "id": 4,
       "userName": "Lub",
-      "age": 6,
-      "gender": "male"
+      "age": 5,
+      "gender": "male",
+      "id": "4"
     }
   ],
   "tasks": [
@@ -47,5 +47,6 @@
       "completed": true,
       "priority": "low"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

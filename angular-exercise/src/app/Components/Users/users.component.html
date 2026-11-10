@@ -1,7 +1,7 @@
 <div class="user-container">
     @for (user of users$ | async; track user.id) {
-    <app-user [userData]="user"></app-user>
+        <app-user (deleteUser)="deleteUserCallback($event)" [userData]="user"></app-user>
     }
 </div>
 
-<a class="btn" type="button" routerLink="/users/add"> Add User</a>
+<a class="btn btn-blue" type="button" routerLink="/users/manage"> Add User</a>

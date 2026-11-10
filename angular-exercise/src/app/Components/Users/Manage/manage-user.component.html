@@ -1,0 +1,23 @@
+<section class="add-form-container">
+    <form class="form-control" [formGroup]="userForm" (ngSubmit)="saveUserHandler()">
+        <div class="form-group">
+            <label class="form-label" for="userName"> User Name: </label>
+            <input class="form-input" id="userName" type="text" formControlName="userName" />
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="age">Age: </label>
+            <input class="form-input" id="age" type="number" formControlName="age" />
+        </div>
+        <div class="form-group">
+            <label class="form-label" for="gender">Gender: </label>
+            <select class="form-select" name="gender" id="gender" formControlName="gender">
+                <option value="">Select a gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </div>
+        <button class="btn btn-blue" type="submit">
+            {{ formType === 'edit' ? 'Update User' : 'Add User' }}
+        </button>
+    </form>
+</section>
